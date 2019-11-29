@@ -167,4 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849694722acbf0c46a882d252435ae2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeightDifference: 0.25
+  visuals: {fileID: 3267889119716543442}
+  materialPlayerNext: {fileID: 2100000, guid: 20a6ba49bcf72364a956d9d78a245af9, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 09be45f02a504a547b56b5345aa6959a, type: 2}

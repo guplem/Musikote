@@ -2,24 +2,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 
 [SelectionBase]
 public class Tile : MonoBehaviour
-{
-    [SerializeField]private float maxHeightDifference = 0.25f;
+{ 
+    private float maxHeightDifference = 0.25f;
+    private bool isPlayerCurrentlyNextToTile;
+
+    [SerializeField] private MeshRenderer visuals;
     
+    //TODO: remove variables after completing 'SetVisuals' method
+    [SerializeField] private Material materialPlayerNext;
+    [SerializeField] private Material defaultMaterial;
+
+    private void Awake()
+    {
+        WorldManager.Instance.RegisterTile(this);
+    }
+
     public void SetupTile()
     {
-        //SetVisuals(IsPlayerNextToTile());
+        isPlayerCurrentlyNextToTile = IsPlayerNextToTile();
+        SetVisuals(isPlayerCurrentlyNextToTile);
     }
-    
+
+    private void SetVisuals(bool isPlayerNextToTile)
+    {
+        if (!isPlayerNextToTile)
+            visuals.material = defaultMaterial;
+        else
+            visuals.material = materialPlayerNext;
+        
+        //TODO: Properly done
+    }
+
     private bool IsPlayerNextToTile()
     {
         for (int p = 0; p < 4; p++)
-            //if (IsPlayerAtPos(GetPositionByIndex(p)))
+            if (IsPlayerAtPos(GetPositionByIndex(p)))
                 return true;
         
+        return false;
+    }
+
+    private bool IsPlayerAtPos(Vector3 pos)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(pos, maxHeightDifference);
+        int i = 0;
+        foreach (Collider collider in hitColliders)
+        {
+            Player player = collider.GetComponent<Player>();
+            if (player != null)
+                return true;
+        }
+
         return false;
     }
 
@@ -44,5 +80,13 @@ public class Tile : MonoBehaviour
             //Gizmos.DrawCube(GetPositionByIndex(p), maxHeightDifference*Vector3.one);
             Gizmos.DrawWireSphere(GetPositionByIndex(p), maxHeightDifference);
         }
+        
+        /*
+        if (IsPlayerNextToTile())
+            Gizmos.color = Color.green;
+        else
+            Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, 0.6f);
+        */
     }
 }

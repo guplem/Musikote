@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public static Player instance;
     private List<Interactable> items;
 
-    public Player()
+    private void Awake()
     {
         instance = this;
     }
