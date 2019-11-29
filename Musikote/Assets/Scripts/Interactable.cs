@@ -24,11 +24,10 @@ public class Interactable : Clickable
     {
         _audioSource = GetComponent<AudioSource>();
     }
-
-
+    
     public override void IsClicked()
     {
-        //TODO: IsClicked
+        UIManager.instance.ShowInteractionsFor(this);
     }
 
     private void Open(bool withOther)
