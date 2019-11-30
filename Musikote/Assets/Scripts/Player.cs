@@ -68,8 +68,6 @@ public class Player : MonoBehaviour
             Vector3 newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate( currentMovementAnimationDuration / currentRotationAnimationDuration));
             transform.rotation = Quaternion.LookRotation(newRotation);
 
-            Debug.Log("New rotation = "+ newRotation);
-            
             angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
             if (angle < 1)
             {

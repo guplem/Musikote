@@ -32,4 +32,6 @@ PrefabInstance:
       propertyPath: movementAnimationDuration
       value: 1
       objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5744702691083203628, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}

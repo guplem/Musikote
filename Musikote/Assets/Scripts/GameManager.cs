@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -18,7 +19,8 @@ public class GameManager : MonoBehaviour
         //Start interactiong
          if (Input.GetMouseButtonDown(0)) {
              RaycastHit hit;
-             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+             Debug.DrawRay(ray.origin, ray.direction);
              if (Physics.Raycast(ray, out hit)) {
                  Clickable clickable = hit.transform.gameObject.GetComponent<Clickable>();
                  if (clickable != null && UIManager.instance.currentInteractable == null) 
