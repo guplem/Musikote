@@ -14,13 +14,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: tilesAffectedByDoor.Array.data[0].tile
-      value: 
+      propertyPath: movementAnimationCurve.m_Curve.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: tilesAffectedByDoor.Array.data[1].tile
-      value: 
+      propertyPath: movementAnimationCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: movementAnimationCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: movementAnimationDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
