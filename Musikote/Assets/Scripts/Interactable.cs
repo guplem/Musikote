@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Interactable : Clickable
+public abstract class Interactable : Clickable
 {
     [SerializeField] public bool open;
     [SerializeField] public bool close;
@@ -23,7 +23,7 @@ public class Interactable : Clickable
     [SerializeField] private AudioClip shakeClip;
     [SerializeField] private AudioClip useClip;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
@@ -33,7 +33,7 @@ public class Interactable : Clickable
         UIManager.instance.ShowInteractionsFor(this);
     }
 
-    public bool Open()
+    public virtual bool Open()
     {
         if (!open) return false;
         audioSource.clip = openClip;
@@ -41,7 +41,7 @@ public class Interactable : Clickable
         return true;
     }
     
-    public bool Close()
+    public virtual bool Close()
     {
         if (!close) return false;
         audioSource.clip = closeClip;
@@ -49,7 +49,7 @@ public class Interactable : Clickable
         return true;
     }
 
-    public bool PickUp()
+    public virtual bool PickUp()
     {
         if (!pickUp) return false;
         Player.instance.AddToInventory(this);
@@ -58,7 +58,7 @@ public class Interactable : Clickable
         return true;
     }
 
-    public bool Push()
+    public virtual bool Push()
     {
         if (!push) return false;
         audioSource.clip = pushClip;
@@ -66,7 +66,7 @@ public class Interactable : Clickable
         return true;
     }
     
-    public bool Pull()
+    public virtual bool Pull()
     {
         if (!pull) return false;
         audioSource.clip = pullClip;
@@ -74,7 +74,7 @@ public class Interactable : Clickable
         return true;
     }
 
-    public bool Shake()
+    public virtual bool Shake()
     {
         if (!shake) return false;
         audioSource.clip = shakeClip;
@@ -82,7 +82,7 @@ public class Interactable : Clickable
         return true;
     }
 
-    public bool Use()
+    public virtual bool Use()
     {
         if (!use) return false;
         audioSource.clip = useClip;

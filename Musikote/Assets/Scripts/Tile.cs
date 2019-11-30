@@ -2,6 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
+[Serializable]
+public class AllowedAccesses
+{
+    [FormerlySerializedAs("allowAccessFromForward")] [SerializeField] public bool forward = true;
+    [FormerlySerializedAs("allowAccessFromBack")] [SerializeField] public bool back = true;
+    [FormerlySerializedAs("allowAccessFromLeft")] [SerializeField] public bool left = true;
+    [FormerlySerializedAs("allowAccessFromRight")] [SerializeField] public bool right = true;
+}
 
 [SelectionBase]
 public class Tile : Clickable
@@ -10,12 +20,9 @@ public class Tile : Clickable
     private bool isPlayerCurrentlyNextToTile;
 
     [SerializeField] private MeshRenderer visuals;
-
-    [SerializeField] private bool connectForward = true;
-    [SerializeField] private bool connectBack = true;
-    [SerializeField] private bool connectLeft = true;
-    [SerializeField] private bool connectRight = true;
     
+    [SerializeField] private AllowedAccesses acessesAllowed;
+
     //TODO: remove variables after completing 'SetVisuals' method
     [SerializeField] private Material materialPlayerNext;
     [SerializeField] private Material defaultMaterial;
@@ -29,6 +36,20 @@ public class Tile : Clickable
     {
         isPlayerCurrentlyNextToTile = IsPlayerNextToTile();
         SetVisuals(isPlayerCurrentlyNextToTile);
+    }
+    
+    public void SetupTile(AllowedAccesses allowedAccesses)
+    {
+        SetAllowedAccesses(allowedAccesses);
+        SetupTile();
+    }
+
+    private void SetAllowedAccesses(AllowedAccesses allowedAccesses)
+    {
+        this.acessesAllowed.forward = allowedAccesses.forward;
+        this.acessesAllowed.right = allowedAccesses.right;
+        this.acessesAllowed.back = allowedAccesses.back;
+        this.acessesAllowed.left = allowedAccesses.left;
     }
 
     private void SetVisuals(bool isPlayerNextToTile)
@@ -71,10 +92,10 @@ public class Tile : Clickable
         {
              switch (i)
             {
-                    case 0:if (connectForward) positions.Add(transform.position + Vector3.forward); break;
-                    case 1:if (connectRight) positions.Add(transform.position + Vector3.right); break;
-                    case 2:if (connectBack) positions.Add(transform.position + Vector3.back); break;
-                    case 3:if (connectLeft) positions.Add(transform.position + Vector3.left); break;
+                    case 0:if (this.acessesAllowed.forward) positions.Add(transform.position + Vector3.forward); break;
+                    case 1:if (this.acessesAllowed.right) positions.Add(transform.position + Vector3.right); break;
+                    case 2:if (this.acessesAllowed.back) positions.Add(transform.position + Vector3.back); break;
+                    case 3:if (this.acessesAllowed.left) positions.Add(transform.position + Vector3.left); break;
                     default: throw new Exception("Value not expected. Should be between 0 and 3 (included).");
             }
         }
