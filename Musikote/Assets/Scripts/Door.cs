@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using UnityEngine;
 
 
@@ -16,13 +17,23 @@ internal class DoorTile
 public class Door : Interactable
 {
 
-    private bool isOpen = false;
+    private bool isOpen;
+    private bool allowMovemment;
     [SerializeField] private List<DoorTile> tilesAffectedByDoor;
     [SerializeField] private GameObject visuals;
+    
+    [SerializeField] private AnimationCurve movementAnimationCurve;
+    private float currentMovementAnimationDuration;
+    private Vector3 lastPosition;
+    [SerializeField] private float movementAnimationDuration;
+    private bool isMovementFinished;
 
     private void Start()
     {
-        Close();
+        //Close();
+        lastPosition = transform.position;
+        isMovementFinished = true;
+        allowMovemment = true;
     }
 
     public override bool Use()
@@ -31,33 +42,63 @@ public class Door : Interactable
 
         if (isOpen)
             return Close();
-        else
-            return Open();
+        
+        return Open();
     }
     
     public override bool Open()
     {
-       
+        if (isOpen) return false;
         if (!base.Open()) return false;
-
+        if (!allowMovemment) return false;
+        
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
             tileDoor.tile.SetupTile(tileDoor.accessesWhileOpen);
         
-        visuals.SetActive(false); //TODO: Animations
-
-        return true;
+        isMovementFinished = false;
+        var target = transform.position;
+        target.x -= 1;
+        
+        StartCoroutine(Open(target));
+        allowMovemment = false;
+        return isOpen = true;
     }
     
     public override bool Close()
     {
+        if (!isOpen) return false;
         if (!base.Use()) return false;
+        if (!allowMovemment) return false;
         
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
             tileDoor.tile.SetupTile(tileDoor.accessesWhileClosed);
 
-        visuals.SetActive(true); //TODO: Animations
-
+        isMovementFinished = false;
+        var target = transform.position;
+        target.x += 1;
+        StartCoroutine(Open(target));
+        allowMovemment = false;
+        isOpen = false;
         return true;
     }
 
+    private IEnumerator Open(Vector3 target)
+    {
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            currentMovementAnimationDuration += Time.deltaTime;
+            transform.position = Vector3.Lerp(lastPosition, target, movementAnimationCurve.Evaluate(
+                currentMovementAnimationDuration / movementAnimationDuration));
+
+            if (Vector3.Distance(transform.position, target) < 0.1f)
+            {
+                currentMovementAnimationDuration = 0f;
+                lastPosition = transform.position;
+                isMovementFinished = true;
+                allowMovemment = true;
+                yield break;
+            }
+        }
+    }
 }

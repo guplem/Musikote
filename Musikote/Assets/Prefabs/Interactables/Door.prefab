@@ -12,60 +12,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      propertyPath: movementAnimationCurve.m_Curve.Array.size
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalRotation.w
+      propertyPath: movementAnimationCurve.m_Curve.Array.data[1].time
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      propertyPath: movementAnimationCurve.m_Curve.Array.data[1].value
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      propertyPath: movementAnimationDuration
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
