@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator MoveTo(Vector3 target)
     {
+        Debug.Log("Moving to " + target);
         animator.SetBool("Walking", true);
         while (true)
         {
@@ -48,27 +50,37 @@ public class Player : MonoBehaviour
 
     private IEnumerator RotateThenMove(Vector3 target)
     {
-        var targetForRotation = new Vector3(target.x, transform.position.y, target.z);
-        var angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
-        var currentRotationAnimationDuration = rotationAnimationDuration * angle / 90;
 
+        
+        Vector3 targetForRotation = new Vector3(target.x+Random.Range(-0.01f, 0.01f), transform.position.y, target.z+Random.Range(-0.01f, 0.01f));
+        
+        float angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
+
+        float currentRotationAnimationDuration = rotationAnimationDuration * angle / 90;
+        Debug.Log("Rotating to face " + target + " with a duration of " + currentRotationAnimationDuration + "s");
+        
         while (true)
         {
             yield return new WaitForEndOfFrame();
             currentMovementAnimationDuration += Time.deltaTime;
-            var targetDirection = targetForRotation - transform.position;
+            Vector3 targetDirection = targetForRotation - transform.position;
             //Calculate the time in order the angles to always rotate at the same velocity
-            var newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate(
-                currentMovementAnimationDuration / currentRotationAnimationDuration));
-            if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
+            Vector3 newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate( currentMovementAnimationDuration / currentRotationAnimationDuration));
+            transform.rotation = Quaternion.LookRotation(newRotation);
+
+            Debug.Log("New rotation = "+ newRotation);
+            
+            angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
+            if (angle < 1)
             {
                 currentMovementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
-            transform.rotation = Quaternion.LookRotation(newRotation);
         }
     }
+    
+
 
     public void RotateAndMove(Vector3 target)
     {
