@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float movementSpeed; // 7f
     [SerializeField] private float rotationSpeed; // 7f
 
-    void Awake()
+    private void Awake()
     {
         instance = this;
     }
