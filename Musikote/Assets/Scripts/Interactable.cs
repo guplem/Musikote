@@ -5,24 +5,24 @@ using UnityEngine;
 
 public class Interactable : Clickable
 {
-    private bool open;
-    private bool close;
-    private bool pickUp;
-    private bool push;
-    private bool shake;
-    private bool use;
+    [SerializeField] private bool open;
+    [SerializeField] private bool close;
+    [SerializeField] private bool pickUp;
+    [SerializeField] private bool push;
+    [SerializeField] private bool shake;
+    [SerializeField] private bool use;
 
-    private AudioSource _audioSource;
-    private AudioClip openClip;
-    private AudioClip closeClip;
-    private AudioClip pickUpClip;
-    private AudioClip pushClip;
-    private AudioClip shakeClip;
-    private AudioClip useClip;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openClip;
+    [SerializeField] private AudioClip closeClip;
+    [SerializeField] private AudioClip pickUpClip;
+    [SerializeField] private AudioClip pushClip;
+    [SerializeField] private AudioClip shakeClip;
+    [SerializeField] private AudioClip useClip;
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     public override void IsClicked()
@@ -30,44 +30,52 @@ public class Interactable : Clickable
         UIManager.instance.ShowInteractionsFor(this);
     }
 
-    private void Open(bool withOther)
+    public bool Open()
     {
-        if (!withOther) return;
-        _audioSource.clip = openClip;
-        _audioSource.Play();
+        if (!open) return false;
+        audioSource.clip = openClip;
+        audioSource.Play();
+        return true;
     }
     
-    public void Close()
+    public bool Close()
     {
-        if (!close) return;
-        _audioSource.clip = closeClip;
-        _audioSource.Play();
+        if (!close) return false;
+        audioSource.clip = closeClip;
+        audioSource.Play();
+        return true;
     }
 
-    public void PickUp()
+    public bool PickUp()
     {
-        if (!pickUp) return;
+        if (!pickUp) return false;
         Player.instance.AddToInventory(this);
+        audioSource.clip = pickUpClip;
+        audioSource.Play();
+        return true;
     }
 
-    public void Push()
+    public bool Push()
     {
-        if (!push) return;
-        _audioSource.clip = openClip;
-        _audioSource.Play();
+        if (!push) return false;
+        audioSource.clip = pushClip;
+        audioSource.Play();
+        return true;
     }
 
-    public void Shake()
+    public bool Shake()
     {
-        if (!shake) return;
-        _audioSource.clip = shakeClip;
-        _audioSource.Play();
+        if (!shake) return false;
+        audioSource.clip = shakeClip;
+        audioSource.Play();
+        return true;
     }
 
-    public void Use()
+    public bool Use()
     {
-        if (!use) return;
-        _audioSource.clip = useClip;
-        _audioSource.Play();
+        if (!use) return false;
+        audioSource.clip = useClip;
+        audioSource.Play();
+        return true;
     }
 }

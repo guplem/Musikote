@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
@@ -38,5 +37,36 @@ public class UIManager : MonoBehaviour
     public void EndInteract()
     {
         currentInteractable = null;
+    }
+    
+    private void OpenCurrentInteractable()
+    {
+        currentInteractable.Open();
+    }
+    
+    public void CloseCurrentInteractable()
+    {
+        currentInteractable.Close();
+    }
+
+    public void PickUpCurrentInteractable()
+    {
+        currentInteractable.PickUp();
+    }
+
+    public void PushCurrentInteractable()
+    {
+        currentInteractable.Push();
+    }
+
+    public void ShakeCurrentInteractable()
+    {
+        currentInteractable.Shake();
+    }
+
+    public void UseCurrentInteractable()
+    {
+        //TODO: check if the currentInteractable is in the inventory to use the "userWith(...)" method instead
+        currentInteractable.Use();
     }
 }
