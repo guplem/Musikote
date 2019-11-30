@@ -18,8 +18,14 @@ public class Door : Interactable
 
     private bool isOpen = false;
     [SerializeField] private List<DoorTile> tilesAffectedByDoor;
-    
-    public new bool Use()
+    [SerializeField] private GameObject visuals;
+
+    private void Start()
+    {
+        Close();
+    }
+
+    public override bool Use()
     {
         if (!base.Use()) return false;
 
@@ -29,22 +35,27 @@ public class Door : Interactable
             return Open();
     }
     
-    public new bool Open()
+    public override bool Open()
     {
-        if (!base.Use()) return false;
+       
+        if (!base.Open()) return false;
 
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
             tileDoor.tile.SetupTile(tileDoor.accessesWhileOpen);
+        
+        visuals.SetActive(false); //TODO: Animations
 
         return true;
     }
     
-    public new bool Close()
+    public override bool Close()
     {
         if (!base.Use()) return false;
-
+        
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
             tileDoor.tile.SetupTile(tileDoor.accessesWhileClosed);
+
+        visuals.SetActive(true); //TODO: Animations
 
         return true;
     }
