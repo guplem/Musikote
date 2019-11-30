@@ -10,6 +10,11 @@ public class Tile : Clickable
     private bool isPlayerCurrentlyNextToTile;
 
     [SerializeField] private MeshRenderer visuals;
+
+    [SerializeField] private bool connectForward = true;
+    [SerializeField] private bool connectBack = true;
+    [SerializeField] private bool connectLeft = true;
+    [SerializeField] private bool connectRight = true;
     
     //TODO: remove variables after completing 'SetVisuals' method
     [SerializeField] private Material materialPlayerNext;
@@ -38,49 +43,55 @@ public class Tile : Clickable
 
     private bool IsPlayerNextToTile()
     {
-        for (int p = 0; p < 4; p++)
-            if (IsPlayerAtPos(GetPositionByIndex(p)))
+        if (IsPlayerAtPos(GaetAllPositions()))
                 return true;
         
         return false;
     }
 
-    private bool IsPlayerAtPos(Vector3 pos)
+    private bool IsPlayerAtPos(List<Vector3> positions)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(pos, maxHeightDifference);
-
-        foreach (Collider collider in hitColliders)
+        foreach (var pos in positions)
         {
-            Player player = collider.GetComponent<Player>();
-            if (player != null)
-                return true;
+            Collider[] hitColliders = Physics.OverlapSphere(pos, maxHeightDifference);
+            foreach (Collider collider in hitColliders)
+            {
+                Player player = collider.GetComponent<Player>();
+                if (player != null)
+                    return true;
+            }
         }
-
         return false;
     }
 
-    private Vector3 GetPositionByIndex(int i)
+    private List<Vector3> GaetAllPositions()
     {
-        switch (i)
+        var positions = new List<Vector3>();
+        for (int i = 0; i < 4; i++)
         {
-            case 0: return transform.position + Vector3.forward; 
-            case 1: return transform.position + Vector3.right; 
-            case 2: return transform.position + Vector3.back; 
-            case 3: return transform.position + Vector3.left; 
-            default: throw new Exception("Value not expected. Should be between 0 and 3 (included).");
+             switch (i)
+            {
+                    case 0:if (connectForward) positions.Add(transform.position + Vector3.forward); break;
+                    case 1:if (connectRight) positions.Add(transform.position + Vector3.right); break;
+                    case 2:if (connectBack) positions.Add(transform.position + Vector3.back); break;
+                    case 3:if (connectLeft) positions.Add(transform.position + Vector3.left); break;
+                    default: throw new Exception("Value not expected. Should be between 0 and 3 (included).");
+            }
         }
+
+        return positions;
     }
 
     
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        for (int p = 0; p < 4; p++)
+        foreach (var pos in GaetAllPositions())
         {
-            //Gizmos.DrawCube(GetPositionByIndex(p), maxHeightDifference*Vector3.one);
-            Gizmos.DrawWireSphere(GetPositionByIndex(p), maxHeightDifference);
+            //Gizmos.DrawCube(GaetAllPositions(p), maxHeightDifference*Vector3.one);
+            Gizmos.DrawWireSphere(pos, maxHeightDifference);
         }
-        
+
         /*
         if (IsPlayerNextToTile())
             Gizmos.color = Color.green;
