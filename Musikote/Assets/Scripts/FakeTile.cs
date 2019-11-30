@@ -8,6 +8,6 @@ public class FakeTile : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            Player.instance.LookAndRotate(transform.position);
+            Player.instance.RotateAndMove(transform.position);
     }
 }

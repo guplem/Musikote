@@ -30,16 +30,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator LookAt(Vector3 target)
+    private IEnumerator RotateThenMove(Vector3 target)
     {
+        Vector3 targetForRotation = new Vector3(target.x, transform.position.y, target.z);
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            var targetDirection = target - transform.position;
+            var targetDirection = targetForRotation - transform.position;
             var newRotation = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newRotation);
             Debug.DrawRay(transform.position, newRotation, Color.red);
-            if (Vector3.Angle(transform.forward, target - transform.position) < 1)
+            if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
                 StartCoroutine(MoveTo(target));
                 yield break;
@@ -47,9 +48,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void LookAndRotate(Vector3 target)
+    public void RotateAndMove(Vector3 target)
     {
-        StartCoroutine(LookAt(target));
+        StartCoroutine(RotateThenMove(target));
     }
 
     public void AddToInventory(Interactable item)

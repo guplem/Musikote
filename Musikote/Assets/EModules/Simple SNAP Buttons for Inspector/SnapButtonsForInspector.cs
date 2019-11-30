@@ -187,7 +187,7 @@ namespace EModules.Snap
         static PRF[] POS_PREFKEYS = { _PRF( "MoveSnapX", 1), _PRF( "MoveSnapY", 1), _PRF("MoveSnapZ", 1) };
         static PRF[] ROT_PREFKEYS = {_PRF( "RotationSnap", 15), _PRF("RotationSnap", 15), _PRF("RotationSnap", 15)};
         static PRF[] SCALE_PREFKEYS = {_PRF( "ScaleSnap", 0.1f), _PRF("ScaleSnap", 0.1f), _PRF("ScaleSnap", 0.1f) };
-        static string[] UNDO_TEXT = { "Move", "Rotate", "Scale" };
+        static string[] UNDO_TEXT = { "RotateAndMove", "Rotate", "Scale" };
         public static Vector3[] VECTORS = { Vector3.up, Vector3.forward, Vector3.down, Vector3.right, Vector3.left, Vector3.back };
         public static string[] VECTORS_STRING = { "Look Up", "Look Forward", "Look Down", "Look Right", "Look Left", "Look Back" };
         public static string[] ALIGN_BY = { "Alignment by Mouse Position", "Alignment by Camera Projection" };

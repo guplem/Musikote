@@ -93,6 +93,6 @@ public class Tile : Clickable
     public override void IsClicked()
     {
         if (!isPlayerCurrentlyNextToTile) return;
-        Player.instance.LookAndRotate(transform.position);
+        Player.instance.RotateAndMove(transform.position);
     }
 }
