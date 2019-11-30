@@ -8,19 +8,19 @@ public class Player : MonoBehaviour
     public static Player instance;
     private List<Interactable> items = new List<Interactable>();
 
-    [SerializeField] private float movementSpeed; // 3f
-    [SerializeField] private float rotationSpeed; // 3f
-
     private Vector3 lastKnownPosition;
     [SerializeField] private AnimationCurve movementAnimationCurve;
+    [SerializeField] private AnimationCurve rotationAnimationCurve;
     [SerializeField] private float movementAnimationDuration;
+    [SerializeField] private float rotationAnimationDuration;
     private float currentMovementAnimationDuration;
-    private float currentRotatementAnimationDuration;
+    private bool isMovementFinished;
 
     private void Awake()
     {
         instance = this;
         lastKnownPosition = transform.position;
+        isMovementFinished = true;
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
                 WorldManager.Instance.RecalculateWorldTiles();
                 currentMovementAnimationDuration = 0f;
                 lastKnownPosition = transform.position;
+                isMovementFinished = true;
                 yield break;
             }
         }
@@ -45,18 +46,22 @@ public class Player : MonoBehaviour
     private IEnumerator RotateThenMove(Vector3 target)
     {
         var targetForRotation = new Vector3(target.x, transform.position.y, target.z);
+        var angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
+        var currentRotationAnimationDuration = rotationAnimationDuration * angle / 90;
+        Debug.LogWarning(currentRotationAnimationDuration);
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            currentRotatementAnimationDuration += Time.deltaTime;
+            currentMovementAnimationDuration += Time.deltaTime;
             var targetDirection = targetForRotation - transform.position;
-            var newRotation = Vector3.Lerp(transform.forward, targetDirection, movementAnimationCurve.Evaluate(
-                currentRotatementAnimationDuration / movementAnimationDuration));
+            //Calculate the time in order the angles to always rotate at the same velocity
+            var newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate(
+                currentMovementAnimationDuration / currentRotationAnimationDuration));
             
             transform.rotation = Quaternion.LookRotation(newRotation);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
-                currentRotatementAnimationDuration = 0f;
+                currentMovementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
@@ -65,6 +70,8 @@ public class Player : MonoBehaviour
 
     public void RotateAndMove(Vector3 target)
     {
+        if (!isMovementFinished) return;
+        isMovementFinished = false;
         StartCoroutine(RotateThenMove(target));
     }
 
