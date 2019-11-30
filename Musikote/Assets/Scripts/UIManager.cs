@@ -24,12 +24,16 @@ public class UIManager : MonoBehaviour
         private set
         {
             _currentInteractable = value;
-            interactions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
+            
+            if (!Player.instance.IsITemInInventory(currentInteractable))
+                interactions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
+            else
+                invetoryInteractions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
             
             if (currentInteractable == null) return;
             openButton.interactable = currentInteractable.open;
             closeButton.interactable = currentInteractable.close;
-            pickUpButton.interactable = currentInteractable.pickUp;
+            pickUpButton.interactable = currentInteractable.pickUpAndDrop;
             pullButton.interactable = currentInteractable.pull;
             pushButton.interactable = currentInteractable.push;
             shakeButton.interactable = currentInteractable.shake;
@@ -41,6 +45,7 @@ public class UIManager : MonoBehaviour
     private Interactable _currentInteractable;
 
     [SerializeField] private GameObject interactions;
+    [SerializeField] private GameObject invetoryInteractions;
     
     private void Awake()
     {
@@ -80,6 +85,13 @@ public class UIManager : MonoBehaviour
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.PickUp();
+        UIManager.instance.EndInteract(); 
+    }
+    
+    public void DropCurrentInteractable()
+    {
+        Player.instance.animator.SetTrigger("Interact");
+        currentInteractable.Drop();
         UIManager.instance.EndInteract(); 
     }
 

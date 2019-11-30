@@ -115,4 +115,16 @@ public class Player : MonoBehaviour
             return false;
         }
     }
+
+    public void RemoveFromInventory(Interactable interactable)
+    {
+        if (items[0] == interactable) items[0] = null;
+        if (items[1] == interactable) items[1] = null;
+        UIManager.instance.inventory.UpdateVisuals();
+    }
+
+    public bool IsITemInInventory(Interactable item)
+    {
+        return items[0] == item || items[0] == item;
+    }
 }
