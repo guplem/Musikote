@@ -9,6 +9,7 @@ public class Interactable : Clickable
     [SerializeField] private bool close;
     [SerializeField] private bool pickUp;
     [SerializeField] private bool push;
+    [SerializeField] private bool pull;
     [SerializeField] private bool shake;
     [SerializeField] private bool use;
 
@@ -17,6 +18,7 @@ public class Interactable : Clickable
     [SerializeField] private AudioClip closeClip;
     [SerializeField] private AudioClip pickUpClip;
     [SerializeField] private AudioClip pushClip;
+    [SerializeField] private AudioClip pullClip;
     [SerializeField] private AudioClip shakeClip;
     [SerializeField] private AudioClip useClip;
 
@@ -59,6 +61,14 @@ public class Interactable : Clickable
     {
         if (!push) return false;
         audioSource.clip = pushClip;
+        audioSource.Play();
+        return true;
+    }
+    
+    public bool Pull()
+    {
+        if (!pull) return false;
+        audioSource.clip = pullClip;
         audioSource.Play();
         return true;
     }

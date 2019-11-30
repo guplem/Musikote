@@ -58,6 +58,11 @@ public class UIManager : MonoBehaviour
     {
         currentInteractable.Push();
     }
+    
+    public void PullCurrentInteractable()
+    {
+        currentInteractable.Pull();
+    }
 
     public void ShakeCurrentInteractable()
     {
