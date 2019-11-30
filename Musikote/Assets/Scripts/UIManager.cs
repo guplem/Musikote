@@ -60,37 +60,44 @@ public class UIManager : MonoBehaviour
     
     public void OpenCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Open();
     }
     
     public void CloseCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Close();
     }
 
     public void PickUpCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.PickUp();
     }
 
     public void PushCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Push();
     }
     
     public void PullCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Pull();
     }
 
     public void ShakeCurrentInteractable()
     {
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Shake();
     }
 
     public void UseCurrentInteractable()
     {
         //TODO: check if the currentInteractable is in the inventory to use the "userWith(...)" method instead
+        Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Use();
     }
 }

@@ -12,16 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: tilesAffectedByDoor.Array.data[0].tile
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
-        type: 3}
-      propertyPath: tilesAffectedByDoor.Array.data[1].tile
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
       propertyPath: m_LocalPosition.x

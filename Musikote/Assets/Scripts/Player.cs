@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float rotationAnimationDuration;
     private float currentMovementAnimationDuration;
     private bool isMovementFinished;
+    [SerializeField] public Animator animator;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator MoveTo(Vector3 target)
     {
+        animator.SetBool("Walking", true);
         while (true)
         {
             yield return new WaitForEndOfFrame();
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
                 currentMovementAnimationDuration = 0f;
                 lastKnownPosition = transform.position;
                 isMovementFinished = true;
+                animator.SetBool("Walking", false);
                 yield break;
             }
         }

@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
          if (Input.GetKeyDown(KeyCode.Escape))
          {
              if (UIManager.instance.currentInteractable != null)
-                 UIManager.instance.EndInteract();
+             {
+                 UIManager.instance.EndInteract();        
+             }
              else
              {
                  //TODO: Show/Close pause menu or exit game
