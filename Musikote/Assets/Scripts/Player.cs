@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    private List<Interactable> items = new List<Interactable>();
+    [HideInInspector] public List<Interactable> items = new List<Interactable>();
 
     private Vector3 lastKnownPosition;
     [SerializeField] private AnimationCurve movementAnimationCurve;
