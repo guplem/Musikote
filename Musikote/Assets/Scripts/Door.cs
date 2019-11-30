@@ -30,10 +30,11 @@ public class Door : Interactable
 
     private void Start()
     {
-        //Close();
         lastPosition = transform.position;
         isMovementFinished = true;
         allowMovemment = true;
+        foreach (DoorTile tileDoor in tilesAffectedByDoor)
+            tileDoor.tile.SetupTile(tileDoor.accessesWhileClosed);
     }
 
     public override bool Use()
