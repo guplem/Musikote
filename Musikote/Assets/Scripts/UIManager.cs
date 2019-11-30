@@ -66,36 +66,42 @@ public class UIManager : MonoBehaviour
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Open();
+        UIManager.instance.EndInteract(); 
     }
     
     public void CloseCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Close();
+        UIManager.instance.EndInteract(); 
     }
 
     public void PickUpCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.PickUp();
+        UIManager.instance.EndInteract(); 
     }
 
     public void PushCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Push();
+        UIManager.instance.EndInteract(); 
     }
     
     public void PullCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Pull();
+        UIManager.instance.EndInteract(); 
     }
 
     public void ShakeCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Shake();
+        UIManager.instance.EndInteract(); 
     }
 
     public void UseCurrentInteractable()
@@ -103,5 +109,6 @@ public class UIManager : MonoBehaviour
         //TODO: check if the currentInteractable is in the inventory to use the "userWith(...)" method instead
         Player.instance.animator.SetTrigger("Interact");
         currentInteractable.Use();
+        UIManager.instance.EndInteract(); 
     }
 }
