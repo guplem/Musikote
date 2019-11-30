@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Interactable : Clickable
 {
-    [SerializeField] private bool open;
-    [SerializeField] private bool close;
-    [SerializeField] private bool pickUp;
-    [SerializeField] private bool push;
-    [SerializeField] private bool shake;
-    [SerializeField] private bool use;
+    [SerializeField] public bool open;
+    [SerializeField] public bool close;
+    [SerializeField] public bool pickUp;
+    [SerializeField] public bool push;
+    [SerializeField] public bool pull;
+    [SerializeField] public bool shake;
+    [SerializeField] public bool use;
 
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
     [SerializeField] private AudioClip openClip;
     [SerializeField] private AudioClip closeClip;
     [SerializeField] private AudioClip pickUpClip;
     [SerializeField] private AudioClip pushClip;
+    [SerializeField] private AudioClip pullClip;
     [SerializeField] private AudioClip shakeClip;
     [SerializeField] private AudioClip useClip;
 
@@ -59,6 +62,14 @@ public class Interactable : Clickable
     {
         if (!push) return false;
         audioSource.clip = pushClip;
+        audioSource.Play();
+        return true;
+    }
+    
+    public bool Pull()
+    {
+        if (!pull) return false;
+        audioSource.clip = pullClip;
         audioSource.Play();
         return true;
     }

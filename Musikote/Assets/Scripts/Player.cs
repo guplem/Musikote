@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    private List<Interactable> items;
+    private List<Interactable> items = new List<Interactable>();
 
     [SerializeField] private float movementSpeed; // 5f
     [SerializeField] private float rotationSpeed; // 5f

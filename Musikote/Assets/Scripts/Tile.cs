@@ -48,7 +48,7 @@ public class Tile : Clickable
     private bool IsPlayerAtPos(Vector3 pos)
     {
         Collider[] hitColliders = Physics.OverlapSphere(pos, maxHeightDifference);
-        int i = 0;
+
         foreach (Collider collider in hitColliders)
         {
             Player player = collider.GetComponent<Player>();
