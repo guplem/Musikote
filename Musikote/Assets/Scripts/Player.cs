@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
     private float currentMovementAnimationDuration;
     private float currentRotatementAnimationDuration;
 
+    private bool isMovementFinished;
+
     private void Awake()
     {
         instance = this;
         lastKnownPosition = transform.position;
+        isMovementFinished = true;
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
                 WorldManager.Instance.RecalculateWorldTiles();
                 currentMovementAnimationDuration = 0f;
                 lastKnownPosition = transform.position;
+                isMovementFinished = true;
                 yield break;
             }
         }
@@ -65,6 +69,8 @@ public class Player : MonoBehaviour
 
     public void RotateAndMove(Vector3 target)
     {
+        if (!isMovementFinished) return;
+        isMovementFinished = false;
         StartCoroutine(RotateThenMove(target));
     }
 
