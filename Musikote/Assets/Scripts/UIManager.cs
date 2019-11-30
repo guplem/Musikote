@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private Button openButton;
+    [SerializeField] private Button closeButton;
+    [SerializeField] private Button pickUpButton;
+    [SerializeField] private Button pullButton;
+    [SerializeField] private Button pushButton;
+    [SerializeField] private Button shakeButton;
+    [SerializeField] private Button useButton;
+
+    
     public static UIManager instance;
     public Interactable currentInteractable
     {
@@ -13,6 +23,15 @@ public class UIManager : MonoBehaviour
         {
             _currentInteractable = value;
             interactions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
+            
+            if (currentInteractable == null) return;
+            openButton.interactable = currentInteractable.open;
+            closeButton.interactable = currentInteractable.close;
+            pickUpButton.interactable = currentInteractable.pickUp;
+            pullButton.interactable = currentInteractable.pull;
+            pushButton.interactable = currentInteractable.push;
+            shakeButton.interactable = currentInteractable.shake;
+            useButton.interactable = currentInteractable.use;
         }
     }
     private Interactable _currentInteractable;
@@ -39,7 +58,7 @@ public class UIManager : MonoBehaviour
         currentInteractable = null;
     }
     
-    private void OpenCurrentInteractable()
+    public void OpenCurrentInteractable()
     {
         currentInteractable.Open();
     }
