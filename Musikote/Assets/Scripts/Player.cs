@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     public static Player instance;
     private List<Interactable> items;
 
-    [SerializeField] private float movementSpeed; // 7f
-    [SerializeField] private float rotationSpeed; // 7f
+    [SerializeField] private float movementSpeed; // 5f
+    [SerializeField] private float rotationSpeed; // 5f
 
     private void Awake()
     {
@@ -20,9 +20,13 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
             transform.position = Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, target) < 0f) yield break;
+            if (Vector3.Distance(transform.position, target) < 0.1f)
+            {
+                WorldManager.Instance.RecalculateWorldTiles();
+                yield break;
+            }
         }
     }
 
@@ -30,7 +34,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
             var targetDirection = target - transform.position;
             var newRotation = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newRotation);

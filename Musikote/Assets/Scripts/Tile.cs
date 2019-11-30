@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
-public class Tile : MonoBehaviour
+public class Tile : Clickable
 { 
     private float maxHeightDifference = 0.25f;
     private bool isPlayerCurrentlyNextToTile;
@@ -88,5 +88,11 @@ public class Tile : MonoBehaviour
             Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(transform.position, 0.6f);
         */
+    }
+
+    public override void IsClicked()
+    {
+        if (!isPlayerCurrentlyNextToTile) return;
+        Player.instance.LookAndRotate(transform.position);
     }
 }
