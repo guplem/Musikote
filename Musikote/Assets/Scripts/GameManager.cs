@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private List<Objetive> _objetives;
-
+    [SerializeField] private List<Objetive> _objectives;
+    
     private void Awake()
     {
         instance = this;
@@ -39,6 +40,19 @@ public class GameManager : MonoBehaviour
                  //TODO: Show/Close pause menu or exit game
              }
          }
-             
+
+         if (_objectives.All(objective => objective.isDone))
+         {
+             //Game Completed
+         }
+    }
+
+    public void CompleteObjective(Objetive currentObjective)
+    {
+        foreach (var objective in _objectives)
+        {
+            if (objective.Equals(currentObjective))
+                objective.isDone = true;
+        }
     }
 }
