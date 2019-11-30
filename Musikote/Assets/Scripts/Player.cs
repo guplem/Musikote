@@ -8,14 +8,12 @@ public class Player : MonoBehaviour
     public static Player instance;
     private List<Interactable> items = new List<Interactable>();
 
-    [SerializeField] private float movementSpeed; // 3f
-    [SerializeField] private float rotationSpeed; // 3f
-
     private Vector3 lastKnownPosition;
     [SerializeField] private AnimationCurve movementAnimationCurve;
+    [SerializeField] private AnimationCurve rotationAnimationCurve;
     [SerializeField] private float movementAnimationDuration;
+    [SerializeField] private float rotationAnimationDuration;
     private float currentMovementAnimationDuration;
-
     private bool isMovementFinished;
 
     private void Awake()
@@ -48,13 +46,17 @@ public class Player : MonoBehaviour
     private IEnumerator RotateThenMove(Vector3 target)
     {
         var targetForRotation = new Vector3(target.x, transform.position.y, target.z);
+        var angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
+        var currentRotationAnimationDuration = rotationAnimationDuration * angle / 90;
+        Debug.LogWarning(currentRotationAnimationDuration);
         while (true)
         {
             yield return new WaitForEndOfFrame();
             currentMovementAnimationDuration += Time.deltaTime;
             var targetDirection = targetForRotation - transform.position;
-            var newRotation = Vector3.Lerp(transform.forward, targetDirection, movementAnimationCurve.Evaluate(
-                currentMovementAnimationDuration / movementAnimationDuration));
+            //Calculate the time in order the angles to always rotate at the same velocity
+            var newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate(
+                currentMovementAnimationDuration / currentRotationAnimationDuration));
             
             transform.rotation = Quaternion.LookRotation(newRotation);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
