@@ -57,14 +57,13 @@ public class Player : MonoBehaviour
             //Calculate the time in order the angles to always rotate at the same velocity
             var newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate(
                 currentMovementAnimationDuration / currentRotationAnimationDuration));
-            
-            transform.rotation = Quaternion.LookRotation(newRotation);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
                 currentMovementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
+            transform.rotation = Quaternion.LookRotation(newRotation);
         }
     }
 
