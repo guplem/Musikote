@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
             shakeButton.interactable = currentInteractable.shake;
             useButton.interactable = currentInteractable.use;
             
-            Debug.LogError("Interacting with " + currentInteractable.gameObject.name);
+            Debug.Log("Interacting with " + currentInteractable.gameObject.name);
         }
     }
     private Interactable _currentInteractable;

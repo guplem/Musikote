@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
          if (Input.GetMouseButtonDown(0)) {
              RaycastHit hit;
              Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-             Debug.DrawRay(ray.origin, ray.direction);
              if (Physics.Raycast(ray, out hit)) {
                  Clickable clickable = hit.transform.gameObject.GetComponent<Clickable>();
                  if (clickable != null && UIManager.instance.currentInteractable == null) 
