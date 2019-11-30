@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9039ebf066da74c9e6c2484457649d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 4817550390914007140}
   openButton: {fileID: 8058037147092689907}
   closeButton: {fileID: 7485358542954210382}
   pickUpButton: {fileID: 7331235350257213517}

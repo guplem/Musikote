@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] public UIInventoryManager inventory;
+    
     [SerializeField] private Button openButton;
     [SerializeField] private Button closeButton;
     [SerializeField] private Button pickUpButton;

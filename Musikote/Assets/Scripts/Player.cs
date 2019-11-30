@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    [HideInInspector] public List<Interactable> items = new List<Interactable>();
+    [HideInInspector] public Interactable[] items;
 
     private Vector3 lastKnownPosition;
     [SerializeField] private AnimationCurve movementAnimationCurve;
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         instance = this;
         lastKnownPosition = transform.position;
         isMovementFinished = true;
+        items = new Interactable[2];
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -89,7 +90,29 @@ public class Player : MonoBehaviour
 
     public void AddToInventory(Interactable item)
     {
-        if (items.Count >= 2) Debug.LogError("Inventory completed");
-        else items.Add(item);
+        
+        if (!DoesItemExistAt(0)) 
+            items[0] = item;
+        else if (!DoesItemExistAt(1)) 
+            items[1] = item;
+        else
+            Debug.LogWarning("Inventory completed by " + items[0] + " and " + items[1]);
+        
+        
+        UIManager.instance.inventory.UpdateVisuals();
+    }
+
+    public bool DoesItemExistAt(int i)
+    {
+        try
+        {
+            string kkk = items[i].gameObject.name;
+            return true;
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("OBJ " + i + " is free");
+            return false;
+        }
     }
 }
