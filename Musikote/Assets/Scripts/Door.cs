@@ -18,7 +18,7 @@ public class Door : Interactable
             return Open();
     }
     
-    public bool Open()
+    public new bool Open()
     {
         if (!base.Use()) return false;
 
@@ -26,7 +26,7 @@ public class Door : Interactable
         return true;
     }
     
-    public bool Close()
+    public new bool Close()
     {
         if (!base.Use()) return false;
 
