@@ -8,12 +8,19 @@ public class Player : MonoBehaviour
     public static Player instance;
     private List<Interactable> items = new List<Interactable>();
 
-    [SerializeField] private float movementSpeed; // 5f
-    [SerializeField] private float rotationSpeed; // 5f
+    [SerializeField] private float movementSpeed; // 3f
+    [SerializeField] private float rotationSpeed; // 3f
+
+    private Vector3 lastKnownPosition;
+    [SerializeField] private AnimationCurve movementAnimationCurve;
+    [SerializeField] private float movementAnimationDuration;
+    private float currentMovementAnimationDuration;
+    private float currentRotatementAnimationDuration;
 
     private void Awake()
     {
         instance = this;
+        lastKnownPosition = transform.position;
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -21,10 +28,15 @@ public class Player : MonoBehaviour
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            transform.position = Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime);
+            currentMovementAnimationDuration += Time.deltaTime;
+            transform.position = Vector3.Lerp(lastKnownPosition, target, movementAnimationCurve.Evaluate(
+                currentMovementAnimationDuration / movementAnimationDuration));
+            
             if (Vector3.Distance(transform.position, target) < 0.1f)
             {
                 WorldManager.Instance.RecalculateWorldTiles();
+                currentMovementAnimationDuration = 0f;
+                lastKnownPosition = transform.position;
                 yield break;
             }
         }
@@ -32,16 +44,19 @@ public class Player : MonoBehaviour
 
     private IEnumerator RotateThenMove(Vector3 target)
     {
-        Vector3 targetForRotation = new Vector3(target.x, transform.position.y, target.z);
+        var targetForRotation = new Vector3(target.x, transform.position.y, target.z);
         while (true)
         {
             yield return new WaitForEndOfFrame();
+            currentRotatementAnimationDuration += Time.deltaTime;
             var targetDirection = targetForRotation - transform.position;
-            var newRotation = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+            var newRotation = Vector3.Lerp(transform.forward, targetDirection, movementAnimationCurve.Evaluate(
+                currentRotatementAnimationDuration / movementAnimationDuration));
+            
             transform.rotation = Quaternion.LookRotation(newRotation);
-            Debug.DrawRay(transform.position, newRotation, Color.red);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
+                currentRotatementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
