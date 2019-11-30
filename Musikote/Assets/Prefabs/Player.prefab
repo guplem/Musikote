@@ -106,8 +106,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementAnimationDuration: 1
+  movementAnimationDuration: 3
   rotationAnimationDuration: 2
+  animator: {fileID: 3166231813912767297}
 --- !u!1 &2432774708190322996
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +270,12 @@ PrefabInstance:
 --- !u!4 &5006512735297144379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 24105299211b49a4b8fc60e30d764adf,
+    type: 3}
+  m_PrefabInstance: {fileID: 524463393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3166231813912767297 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 24105299211b49a4b8fc60e30d764adf,
     type: 3}
   m_PrefabInstance: {fileID: 524463393}
   m_PrefabAsset: {fileID: 0}

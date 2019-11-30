@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float rotationAnimationDuration;
     private float currentMovementAnimationDuration;
     private bool isMovementFinished;
+    [SerializeField] public Animator animator;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator MoveTo(Vector3 target)
     {
+        animator.SetBool("Walking", true);
         while (true)
         {
             yield return new WaitForEndOfFrame();
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
                 currentMovementAnimationDuration = 0f;
                 lastKnownPosition = transform.position;
                 isMovementFinished = true;
+                animator.SetBool("Walking", false);
                 yield break;
             }
         }
@@ -57,14 +60,13 @@ public class Player : MonoBehaviour
             //Calculate the time in order the angles to always rotate at the same velocity
             var newRotation = Vector3.Lerp(transform.forward, targetDirection, rotationAnimationCurve.Evaluate(
                 currentMovementAnimationDuration / currentRotationAnimationDuration));
-            
-            transform.rotation = Quaternion.LookRotation(newRotation);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
                 currentMovementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
+            transform.rotation = Quaternion.LookRotation(newRotation);
         }
     }
 
