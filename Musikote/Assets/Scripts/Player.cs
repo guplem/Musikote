@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
         var targetForRotation = new Vector3(target.x, transform.position.y, target.z);
         var angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
         var currentRotationAnimationDuration = rotationAnimationDuration * angle / 90;
-        Debug.LogWarning(currentRotationAnimationDuration);
         while (true)
         {
             yield return new WaitForEndOfFrame();
