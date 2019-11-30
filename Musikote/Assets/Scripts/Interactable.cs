@@ -30,7 +30,8 @@ public abstract class Interactable : Clickable
     
     public override void IsClicked()
     {
-        UIManager.instance.ShowInteractionsFor(this);
+        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1)
+            UIManager.instance.ShowInteractionsFor(this);
     }
 
     public virtual bool Open()

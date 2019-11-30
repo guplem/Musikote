@@ -30,7 +30,7 @@ public class Door : Interactable
 
     private void Start()
     {
-        lastPosition = transform.position;
+        lastPosition = visuals.transform.position;
         isMovementFinished = true;
         allowMovemment = true;
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
@@ -57,7 +57,7 @@ public class Door : Interactable
             tileDoor.tile.SetupTile(tileDoor.accessesWhileOpen);
         
         isMovementFinished = false;
-        var target = transform.position;
+        var target = visuals.transform.position;
         target.x -= 1;
         
         StartCoroutine(Open(target));
@@ -75,7 +75,7 @@ public class Door : Interactable
             tileDoor.tile.SetupTile(tileDoor.accessesWhileClosed);
 
         isMovementFinished = false;
-        var target = transform.position;
+        var target = visuals.transform.position;
         target.x += 1;
         StartCoroutine(Open(target));
         allowMovemment = false;
@@ -89,13 +89,13 @@ public class Door : Interactable
         {
             yield return new WaitForEndOfFrame();
             currentMovementAnimationDuration += Time.deltaTime;
-            transform.position = Vector3.Lerp(lastPosition, target, movementAnimationCurve.Evaluate(
+            visuals.transform.position = Vector3.Lerp(lastPosition, target, movementAnimationCurve.Evaluate(
                 currentMovementAnimationDuration / movementAnimationDuration));
 
-            if (Vector3.Distance(transform.position, target) < 0.1f)
+            if (Vector3.Distance(visuals.transform.position, target) < 0.1f)
             {
                 currentMovementAnimationDuration = 0f;
-                lastPosition = transform.position;
+                lastPosition = visuals.transform.position;
                 isMovementFinished = true;
                 allowMovemment = true;
                 yield break;
