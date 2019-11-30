@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     [SerializeField] private AnimationCurve movementAnimationCurve;
     [SerializeField] private float movementAnimationDuration;
     private float currentMovementAnimationDuration;
-    private float currentRotatementAnimationDuration;
 
     private bool isMovementFinished;
 
@@ -52,15 +51,15 @@ public class Player : MonoBehaviour
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            currentRotatementAnimationDuration += Time.deltaTime;
+            currentMovementAnimationDuration += Time.deltaTime;
             var targetDirection = targetForRotation - transform.position;
             var newRotation = Vector3.Lerp(transform.forward, targetDirection, movementAnimationCurve.Evaluate(
-                currentRotatementAnimationDuration / movementAnimationDuration));
+                currentMovementAnimationDuration / movementAnimationDuration));
             
             transform.rotation = Quaternion.LookRotation(newRotation);
             if (Vector3.Angle(transform.forward, targetForRotation - transform.position) < 1)
             {
-                currentRotatementAnimationDuration = 0f;
+                currentMovementAnimationDuration = 0f;
                 StartCoroutine(MoveTo(target));
                 yield break;
             }
