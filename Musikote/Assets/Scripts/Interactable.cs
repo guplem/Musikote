@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(AudioSource))]
 public abstract class Interactable : Clickable
 {
     [SerializeField] public bool open;
     [SerializeField] public bool close;
-    [SerializeField] public bool pickUp;
+    [FormerlySerializedAs("pickUp")] [SerializeField] public bool pickUpAndDrop;
     [SerializeField] public bool push;
     [SerializeField] public bool pull;
     [SerializeField] public bool shake;
@@ -18,6 +19,7 @@ public abstract class Interactable : Clickable
     [SerializeField] private AudioClip openClip;
     [SerializeField] private AudioClip closeClip;
     [SerializeField] private AudioClip pickUpClip;
+    [SerializeField] private AudioClip dropClip;
     [SerializeField] private AudioClip pushClip;
     [SerializeField] private AudioClip pullClip;
     [SerializeField] private AudioClip shakeClip;
@@ -30,8 +32,14 @@ public abstract class Interactable : Clickable
     
     public override void IsClicked()
     {
-        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1)
+        Debug.Log("The current distance is: " + Vector3.Distance(Player.instance.transform.position, transform.position));
+        
+        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1.5)
+        {
+            Debug.Log("THe distance to interact is correct. ");
             UIManager.instance.ShowInteractionsFor(this);
+        }
+            
     }
 
     public virtual bool Open()
@@ -52,13 +60,22 @@ public abstract class Interactable : Clickable
 
     public virtual bool PickUp()
     {
-        if (!pickUp) return false;
+        if (!pickUpAndDrop) return false;
         Player.instance.AddToInventory(this);
         audioSource.clip = pickUpClip;
         audioSource.Play();
         return true;
     }
 
+    public virtual bool Drop()
+    {
+        if (!pickUpAndDrop) return false;
+        Player.instance.RemoveFromInventory(this);
+        audioSource.clip = pickUpClip;
+        audioSource.Play();
+        return true;
+    }
+    
     public virtual bool Push()
     {
         if (!push) return false;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private List<Objetive> _objetives;
+    [SerializeField] public LayerMask clickHit;
 
     private void Awake()
     {
@@ -18,10 +20,13 @@ public class GameManager : MonoBehaviour
     {
         //Start interactiong
          if (Input.GetMouseButtonDown(0)) {
+             Debug.Log("Click");
              RaycastHit hit;
              Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-             if (Physics.Raycast(ray, out hit)) {
+             if (Physics.Raycast(ray, out hit, 200, clickHit)) {
                  Clickable clickable = hit.transform.gameObject.GetComponent<Clickable>();
+                 if (clickable != null)
+                     Debug.Log("Clicked clickable " + clickable.gameObject.name + ". Current interactable is " + UIManager.instance.currentInteractable);
                  if (clickable != null && UIManager.instance.currentInteractable == null) 
                      clickable.IsClicked();
              }
@@ -39,6 +44,19 @@ public class GameManager : MonoBehaviour
                  //TODO: Show/Close pause menu or exit game
              }
          }
-             
+
+         if (_objectives.All(objective => objective.isDone))
+         {
+             //Game Completed
+         }
+    }
+
+    public void CompleteObjective(Objetive currentObjective)
+    {
+        foreach (var objective in _objectives)
+        {
+            if (objective.Equals(currentObjective))
+                objective.isDone = true;
+        }
     }
 }

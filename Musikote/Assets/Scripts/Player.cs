@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    private List<Interactable> items = new List<Interactable>();
+    [HideInInspector] public Interactable[] items;
 
     private Vector3 lastKnownPosition;
     [SerializeField] private AnimationCurve movementAnimationCurve;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
         instance = this;
         lastKnownPosition = transform.position;
         isMovementFinished = true;
+        items = new Interactable[2];
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -89,7 +91,60 @@ public class Player : MonoBehaviour
 
     public void AddToInventory(Interactable item)
     {
-        if (items.Count >= 2) Debug.LogError("Inventory completed");
-        else items.Add(item);
+
+        if (!DoesItemExistAt(0))
+        {
+            items[0] = item;
+            item.gameObject.SetActive(false);
+        }
+        else if (!DoesItemExistAt(1))
+        {
+            items[1] = item;
+            item.gameObject.SetActive(false);
+        }
+        else
+            Debug.LogWarning("Inventory completed by " + items[0] + " and " + items[1]);
+        
+        
+        UIManager.instance.inventory.UpdateVisuals();
+    }
+
+    public bool DoesItemExistAt(int i)
+    {
+        try
+        {
+            string kkk = items[i].gameObject.name;
+            return true;
+        }
+        catch (NullReferenceException)
+        {
+            return false;
+        }
+    }
+
+    public void RemoveFromInventory(Interactable interactable)
+    {
+
+        if (items[0] == interactable) { 
+            items[0] = null; 
+            interactable.gameObject.SetActive(true);
+            interactable.transform.position = transform.position + Vector3.up * (interactable.transform.localScale.y / 2f); 
+        }
+        else if (items[1] == interactable)
+        {
+            items[1] = null; 
+            interactable.gameObject.SetActive(true);
+            interactable.transform.position = transform.position + Vector3.up * (interactable.transform.localScale.y / 2f); 
+        }
+        else Debug.LogError("Trying to remove an interactable that is not in the inventory: " + interactable.gameObject.name);
+
+        UIManager.instance.inventory.UpdateVisuals();
+    }
+
+    public bool IsITemInInventory(Interactable item)
+    {
+        if (item == null)
+            return false;
+        return items[0] == item || items[0] == item;
     }
 }
