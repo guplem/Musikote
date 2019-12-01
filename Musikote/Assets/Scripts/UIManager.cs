@@ -15,6 +15,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button pushButton;
     [SerializeField] private Button shakeButton;
     [SerializeField] private Button useButton;
+    
+    [SerializeField] private Button openButtonInventory;
+    [SerializeField] private Button closeButtonInventory;
+    [SerializeField] private Button dropButtonInventory;
+    [SerializeField] private Button pullButtonInventory;
+    [SerializeField] private Button pushButtonInventory;
+    [SerializeField] private Button shakeButtonInventory;
+    [SerializeField] private Button useButtonInventory;
 
     
     public static UIManager instance;
@@ -37,14 +45,26 @@ public class UIManager : MonoBehaviour
                 invetoryInteractions.SetActive(true); //TODO: Replace to play animation
 
             if (_currentInteractable == null) return;
-            openButton.interactable = _currentInteractable.open;
-            closeButton.interactable = _currentInteractable.close;
-            pickUpButton.interactable = _currentInteractable.pickUpAndDrop;
-            pullButton.interactable = _currentInteractable.pull;
-            pushButton.interactable = _currentInteractable.push;
-            shakeButton.interactable = _currentInteractable.shake;
-            useButton.interactable = _currentInteractable.use;
-            
+
+            if (!Player.instance.IsITemInInventory(currentInteractable))
+            {
+                openButton.interactable = _currentInteractable.open;
+                closeButton.interactable = _currentInteractable.close;
+                pickUpButton.interactable = _currentInteractable.pickUpAndDrop;
+                pullButton.interactable = _currentInteractable.pull;
+                pushButton.interactable = _currentInteractable.push;
+                shakeButton.interactable = _currentInteractable.shake;
+                useButton.interactable = _currentInteractable.use;
+            } else {
+                openButtonInventory.interactable = _currentInteractable.open;
+                closeButtonInventory.interactable = _currentInteractable.close;
+                dropButtonInventory.interactable = _currentInteractable.pickUpAndDrop;
+                pullButtonInventory.interactable = _currentInteractable.pull;
+                pushButtonInventory.interactable = _currentInteractable.push;
+                shakeButtonInventory.interactable = _currentInteractable.shake;
+                useButtonInventory.interactable = _currentInteractable.use;
+            }
+
             Debug.Log("Interacting with " + _currentInteractable.gameObject.name);
         }
     }
