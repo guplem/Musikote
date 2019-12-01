@@ -95,7 +95,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.45588237, g: 0.45588237, b: 0.45588237, a: 1}
     m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
@@ -181,7 +181,7 @@ MonoBehaviour:
   rt: {fileID: 0}
   parentRM: {fileID: 0}
   button: {fileID: 5167870392382390395}
-  label: Element Name
+  label: Close
   angleMin: 0
   angleMax: 0
   angleOffset: 0

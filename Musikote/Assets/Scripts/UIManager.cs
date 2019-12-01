@@ -32,7 +32,6 @@ public class UIManager : MonoBehaviour
         get { return _currentInteractable; }
         private set
         {
-            Debug.LogWarning("SETTING TO '" + value + "'");
             _currentInteractable = value;
 
             if ( _currentInteractable == null)

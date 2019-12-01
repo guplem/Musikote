@@ -61,14 +61,8 @@ public class GameManager : MonoBehaviour
 
     public void CompleteObjective(Objetive currentObjective)
     {
-        foreach (Objetive objective in objectives)
-        {
-            if (objective.Equals(currentObjective))
-            {
-                objectives.Remove(objective);
-                UIManager.instance.objectivesManager.Setup();
-            }
-        }
+        objectives.Remove(currentObjective);
+        UIManager.instance.objectivesManager.Setup();
         
         //TODO complete game
     }
