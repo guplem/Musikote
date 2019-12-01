@@ -27,11 +27,15 @@ public class Tile : Clickable
             SetVisuals(_isPlayerCurrentlyNextToTile);
         }
     }
+
+    public AudioClip AudioClip => audioClip;
     private bool _isPlayerCurrentlyNextToTile;
 
     [SerializeField] private AllowedAccesses acessesAllowed;
     
     [SerializeField] private GameObject avaliabilityMarker;
+
+    [SerializeField] private AudioClip audioClip;
     
     private void Awake()
     {
@@ -40,7 +44,7 @@ public class Tile : Clickable
 
     public void SetupTile()
     {
-        isPlayerCurrentlyNextToTile = IsPlayerNextToTile();
+        isPlayerCurrentlyNextToTile = IsPlayerNextToTile() && UIManager.instance.interactableWaiting == null;
     }
     
     public void SetupTile(AllowedAccesses allowedAccesses)
