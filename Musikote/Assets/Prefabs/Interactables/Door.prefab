@@ -32,6 +32,21 @@ PrefabInstance:
       propertyPath: movementAnimationDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: use
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 59aa055d4d21d344dad6be20d8323376, type: 3}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 59aa055d4d21d344dad6be20d8323376, type: 3}
     m_RemovedComponents:
     - {fileID: 5744702691083203628, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}

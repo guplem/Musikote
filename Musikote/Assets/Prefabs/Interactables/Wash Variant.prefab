@@ -10,8 +10,23 @@ PrefabInstance:
     - target: {fileID: 5744702692362287254, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
       propertyPath: m_Name
-      value: Wash
+      value: Wash Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: open
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: close
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03,
+        type: 3}
+      propertyPath: useClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1582e6ba4fb5b1c4d82958d2284b164e, type: 3}
     - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
       propertyPath: m_LocalPosition.x

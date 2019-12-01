@@ -17,15 +17,15 @@ MonoBehaviour:
   pickUpAndDrop: 1
   push: 0
   pull: 0
-  shake: 0
+  shake: 1
   use: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 0}
-  pickUpClip: {fileID: 0}
-  dropClip: {fileID: 0}
+  pickUpClip: {fileID: 8300000, guid: aa6c016a6a5933145a1aaa9c097e615f, type: 3}
+  dropClip: {fileID: 8300000, guid: 019aa768e7b12a64f9373ae770fd017e, type: 3}
   pushClip: {fileID: 0}
   pullClip: {fileID: 0}
-  shakeClip: {fileID: 0}
+  shakeClip: {fileID: 8300000, guid: 04079e015dbaff64b8af29980ecfef55, type: 3}
   useClip: {fileID: 0}
 --- !u!1001 &5430515969372918614
 PrefabInstance:
@@ -52,7 +52,7 @@ PrefabInstance:
     - target: {fileID: 5744702692362287254, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
       propertyPath: m_Name
-      value: Keys
+      value: Keys Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5744702692362287261, guid: 85851483d0f3cc443b83fd9fd0045f03,
         type: 3}
