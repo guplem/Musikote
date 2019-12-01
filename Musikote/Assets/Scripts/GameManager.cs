@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
              Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
              if (Physics.Raycast(ray, out hit, 200, clickHit)) {
                  Clickable clickable = hit.transform.gameObject.GetComponent<Clickable>();
-                 //if (clickable != null)
-                     Debug.Log("Clicked " + clickable.gameObject.name, clickable.gameObject);
+                 if (clickable != null)
+                     Debug.Log("Clicked clickable " + clickable.gameObject.name + ". Current interactable is " + UIManager.instance.currentInteractable);
                  if (clickable != null && UIManager.instance.currentInteractable == null) 
                      clickable.IsClicked();
              }
