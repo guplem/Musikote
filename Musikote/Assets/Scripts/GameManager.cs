@@ -8,7 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private List<Objetive> _objetives;
+    [SerializeField] private List<Objetive> _objectives;
     [SerializeField] public LayerMask clickHit;
 
     private void Awake()
