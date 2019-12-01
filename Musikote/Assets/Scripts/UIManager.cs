@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
         get { return _currentInteractable; }
         private set
         {
+            Debug.LogWarning("SETTING TO '" + value + "'");
             _currentInteractable = value;
 
             if ( _currentInteractable == null)
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        interactableWaiting = null;
     }
 
     public void ShowInteractionsFor(Interactable interactable)
@@ -139,13 +141,23 @@ public class UIManager : MonoBehaviour
     }
 
 
-    private Interactable interactableWaiting;
+    [SerializeField] private Texture2D mixUseCursor;
+    [SerializeField] private Texture2D standardCursor;
+    private Interactable interactableWaiting
+    {
+        get { return _interactableWaiting; }
+        set
+        {
+            _currentInteractable = value;
+            Cursor.SetCursor(_currentInteractable == null ? mixUseCursor : standardCursor, new Vector2(70, 70), CursorMode.Auto);
+        }
+    }
+    private Interactable _interactableWaiting { get; set; }
 
     public void LookForSecondObjectToUse()
     {
         interactableWaiting = currentInteractable;
         Debug.LogWarning("Saved Interactable to wait for another to be used with.");
-        // TODO: Show cursor to select the second object
     }
 
 }

@@ -185,6 +185,8 @@ MonoBehaviour:
   useButton: {fileID: 4716142349754176258}
   interactions: {fileID: 8058037147102443827}
   invetoryInteractions: {fileID: 5049327160540811679}
+  mixUseCursor: {fileID: 2800000, guid: 78cdf78b04905e74ea8146d6a8d61268, type: 3}
+  standardCursor: {fileID: 2800000, guid: cc2ca38b84e0d654c85aeeffc1c0c996, type: 3}
 --- !u!1 &6804397432054018356
 GameObject:
   m_ObjectHideFlags: 0
