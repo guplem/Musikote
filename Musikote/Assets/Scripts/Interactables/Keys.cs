@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class Keys : Interactable
 {
- private void Update()
- {
-  Debug.Log("KEYRUNNIN");
- }
 
  
 }

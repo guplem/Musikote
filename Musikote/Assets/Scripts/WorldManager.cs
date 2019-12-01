@@ -24,6 +24,12 @@ public class WorldManager : MonoBehaviour
         foreach (Tile tile in tilesInMap)
             tile.SetupTile();
     }
+    
+    public void DeactivateAvaliabilityInAllTiles()
+    {
+        foreach (Tile tile in tilesInMap)
+            tile.isPlayerCurrentlyNextToTile = false;
+    }
 
     private void Start()
     {
