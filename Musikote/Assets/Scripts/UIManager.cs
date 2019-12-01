@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button shakeButtonInventory;
     [SerializeField] private Button useButtonInventory;
 
+    [SerializeField] public UIObjectiveManager objectivesManager;
     
     public static UIManager instance;
     public Interactable currentInteractable

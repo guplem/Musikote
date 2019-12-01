@@ -7,5 +7,4 @@ public class Objetive : ScriptableObject
 {
     public string title;
     public string description;
-    public bool isDone;
 }

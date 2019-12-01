@@ -4,16 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private List<Objetive> _objectives;
+    [FormerlySerializedAs("_objectives")] [SerializeField] public List<Objetive> objectives;
     [SerializeField] public LayerMask clickHit;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        UIManager.instance.objectivesManager.Setup();
     }
 
     private void Update()
@@ -50,19 +56,26 @@ public class GameManager : MonoBehaviour
                  //TODO: Show/Close pause menu or exit game
              }
          }
-
-         if (_objectives.All(objective => objective.isDone))
-         {
-             //TODO: Game Completed
-         }
+         
     }
 
     public void CompleteObjective(Objetive currentObjective)
     {
-        foreach (var objective in _objectives)
+        foreach (Objetive objective in objectives)
         {
             if (objective.Equals(currentObjective))
-                objective.isDone = true;
+            {
+                objectives.Remove(objective);
+                UIManager.instance.objectivesManager.Setup();
+            }
         }
+        
+        //TODO complete game
+    }
+
+    public void RemoveInteractableFromGame(Interactable interactable)
+    {
+        Player.instance.RemoveFromInventory(interactable);
+        interactable.gameObject.SetActive(false);
     }
 }
