@@ -24,7 +24,6 @@ public class UIManager : MonoBehaviour
         private set
         {
             _currentInteractable = value;
-            Debug.Log("Setting _currentInteractable to '" + _currentInteractable + "'");
 
             if ( _currentInteractable == null)
             {
@@ -35,9 +34,7 @@ public class UIManager : MonoBehaviour
                 interactions.SetActive(true); //TODO: Replace to play animation
             else
                 invetoryInteractions.SetActive(true); //TODO: Replace to play animation
-            
-            Debug.Log("interactions " + interactions.activeSelf + ", invetoryInteractions " + invetoryInteractions.activeSelf);
-            
+
             if (_currentInteractable == null) return;
             openButton.interactable = _currentInteractable.open;
             closeButton.interactable = _currentInteractable.close;
@@ -66,8 +63,16 @@ public class UIManager : MonoBehaviour
             Debug.LogWarning("Trying to show interactions of a 'null' interactable.");
         
         if (currentInteractable == interactable) return;
-        
-        currentInteractable = interactable;
+
+        if (interactableWaiting == null)
+            currentInteractable = interactable;
+        else
+        {
+            if (!interactable.UseWith(interactableWaiting))
+                Debug.Log("Interaction not permited between " + interactableWaiting + " and " + interactable);
+        }
+
+        interactableWaiting = null;
     }
 
     public void EndInteract()
@@ -132,4 +137,15 @@ public class UIManager : MonoBehaviour
         currentInteractable.Use();
         UIManager.instance.EndInteract(); 
     }
+
+
+    private Interactable interactableWaiting;
+
+    public void LookForSecondObjectToUse()
+    {
+        interactableWaiting = currentInteractable;
+        Debug.LogWarning("Saved Interactable to wait for another to be used with.");
+        // TODO: Show cursor to select the second object
+    }
+
 }
