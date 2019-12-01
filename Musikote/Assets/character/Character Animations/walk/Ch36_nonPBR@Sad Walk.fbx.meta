@@ -59,7 +59,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
+      - time: 0.2062147
+        functionName: Walk
+        data: 
+        objectReferenceParameter: {fileID: 2028383695597074097, guid: 95a7bedd438ac194781fe373366e67d9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.69491524
         functionName: Walk
         data: 
         objectReferenceParameter: {fileID: 2028383695597074097, guid: 95a7bedd438ac194781fe373366e67d9,

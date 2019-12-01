@@ -156,15 +156,21 @@ public class Player : MonoBehaviour
 
     public void Walk()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hit, 200))
+        var ray = new Ray(transform.position + Vector3.up*2f, Vector3.down);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red, 0.5f);
+        if (Physics.Raycast(ray, out var hit, 200, GameManager.instance.clickHit))
         {
+            Debug.DrawLine(hit.point, ray.origin, Color.green, 0.5f);
             var tile = hit.transform.GetComponent<Tile>();
             if (tile != null)
             {
                 audioSource.clip = tile.AudioClip;
                 audioSource.Play();
-                Debug.Log("suena");
+                Debug.Log("suena " + tile.AudioClip);
+            }
+            else
+            {
+                Debug.Log("Tile not found. Instead found: " + hit.collider.gameObject.name);
             }
         }
     }
