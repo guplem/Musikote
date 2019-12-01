@@ -35,21 +35,22 @@ public abstract class Interactable : Clickable
     private void Awake()
     {
         isInitialScale = true;
+        visual.localScale = Vector3.zero;
     }
 
     protected void Update()
     {
         if (Vector3.Distance(Player.instance.transform.position, visual.transform.position) >= 1.5f)
         {
-            if (!isInitialScale) return;
+            if (isInitialScale) return;
             StartCoroutine(ChangeSize(visual, Vector3.zero));
-            isInitialScale = false;
+            isInitialScale = true;
         }
         else
         {
-            if (isInitialScale) return;
+            if (!isInitialScale) return;
             StartCoroutine(ChangeSize(visual, Vector3.one));
-            isInitialScale = true;
+            isInitialScale = false;
         }
     }
 
