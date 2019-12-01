@@ -20,7 +20,6 @@ public class Door : Interactable
     private bool isOpen;
     private bool allowMovemment;
     [SerializeField] private List<DoorTile> tilesAffectedByDoor;
-    [SerializeField] private GameObject visuals;
     
     [SerializeField] private AnimationCurve movementAnimationCurve;
     private float currentMovementAnimationDuration;
@@ -30,7 +29,7 @@ public class Door : Interactable
 
     private void Start()
     {
-        lastPosition = visuals.transform.position;
+        lastPosition = visual.position;
         isMovementFinished = true;
         allowMovemment = true;
         foreach (DoorTile tileDoor in tilesAffectedByDoor)
@@ -57,7 +56,7 @@ public class Door : Interactable
             tileDoor.tile.SetupTile(tileDoor.accessesWhileOpen);
         
         isMovementFinished = false;
-        var target = visuals.transform.position;
+        var target = visual.position;
         target.x -= 1;
         
         StartCoroutine(Open(target));
@@ -75,7 +74,7 @@ public class Door : Interactable
             tileDoor.tile.SetupTile(tileDoor.accessesWhileClosed);
 
         isMovementFinished = false;
-        var target = visuals.transform.position;
+        var target = visual.position;
         target.x += 1;
         StartCoroutine(Open(target));
         allowMovemment = false;
@@ -89,13 +88,13 @@ public class Door : Interactable
         {
             yield return new WaitForEndOfFrame();
             currentMovementAnimationDuration += Time.deltaTime;
-            visuals.transform.position = Vector3.Lerp(lastPosition, target, movementAnimationCurve.Evaluate(
+            visual.position = Vector3.Lerp(lastPosition, target, movementAnimationCurve.Evaluate(
                 currentMovementAnimationDuration / movementAnimationDuration));
 
-            if (Vector3.Distance(visuals.transform.position, target) < 0.1f)
+            if (Vector3.Distance(visual.position, target) < 0.1f)
             {
                 currentMovementAnimationDuration = 0f;
-                lastPosition = visuals.transform.position;
+                lastPosition = visual.position;
                 isMovementFinished = true;
                 allowMovemment = true;
                 yield break;
