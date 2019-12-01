@@ -34,10 +34,11 @@ public abstract class Interactable : Clickable
     {
         Debug.Log("The current distance is: " + Vector3.Distance(Player.instance.transform.position, transform.position));
         
-        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1.5)
+        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1.01f)
         {
             Debug.Log("THe distance to interact is correct. ");
             UIManager.instance.ShowInteractionsFor(this);
+            Player.instance.Rotate(transform.position);
         }
             
     }
