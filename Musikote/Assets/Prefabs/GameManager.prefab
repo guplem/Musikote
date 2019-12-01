@@ -44,7 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f4890c86d7d7446bd43fecbd2057e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetives: []
+  _objectives:
+  - {fileID: 11400000, guid: 50346f56c4e1e8b408426a0dfeb9780e, type: 2}
+  - {fileID: 11400000, guid: 4afe5afb389b35e40b7210504cc7f4be, type: 2}
+  - {fileID: 11400000, guid: 5369f7b5a802a34418505f66c0c3d423, type: 2}
+  - {fileID: 11400000, guid: e2cf61eb472af9443a465916b13652c1, type: 2}
+  - {fileID: 11400000, guid: db2ae0abe33481f459bb2f2b13dcce05, type: 2}
+  clickHit:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &305722485115421748
 MonoBehaviour:
   m_ObjectHideFlags: 0
