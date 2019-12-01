@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New objective", menuName = "Objective")]
 public class Objetive : ScriptableObject
 {
-    private string title;
-    private string description;
-    private bool isDone;
+    public string title;
+    public string description;
+    public bool isDone;
 }
