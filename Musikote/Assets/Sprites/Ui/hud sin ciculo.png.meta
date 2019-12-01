@@ -152,18 +152,18 @@ TextureImporter:
       name: hud sin ciculo_0
       rect:
         serializedVersion: 2
-        x: 277
-        y: 4399
-        width: 506
-        height: 487
+        x: 203
+        y: 3314
+        width: 1255
+        height: 1273
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15316cc73a2b5774eb3dde4e3afc25d7
+      spriteID: afa5c5ba080900e4296258cd8af03ce9
       internalID: -3612352489663068525
       vertices: []
       indices: 
@@ -173,18 +173,18 @@ TextureImporter:
       name: hud sin ciculo_1
       rect:
         serializedVersion: 2
-        x: 988
-        y: 4380
-        width: 622
-        height: 545
+        x: 1740
+        y: 3386
+        width: 1218
+        height: 1128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 899ff18a5c393cf418793aa7d47864d1
+      spriteID: cd4ee4b15f910fa4d90e99619d39315c
       internalID: -663910205121143762
       vertices: []
       indices: 
@@ -194,18 +194,18 @@ TextureImporter:
       name: hud sin ciculo_2
       rect:
         serializedVersion: 2
-        x: 1844
-        y: 4370
-        width: 584
-        height: 564
+        x: 3340
+        y: 3377
+        width: 1273
+        height: 1219
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da27bb023433153449470677ea9d6e74
+      spriteID: dcab591d791951743a6ba14031b79be9
       internalID: -2931239618824429667
       vertices: []
       indices: 
@@ -215,18 +215,18 @@ TextureImporter:
       name: hud sin ciculo_3
       rect:
         serializedVersion: 2
-        x: 2622
-        y: 4409
-        width: 623
-        height: 409
+        x: 4977
+        y: 3405
+        width: 1282
+        height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d292a59cc2ee5214f955db10d0e02a32
+      spriteID: 502b0283e4cffbd47ac94779faabb91d
       internalID: 4656472617953078789
       vertices: []
       indices: 
@@ -236,18 +236,18 @@ TextureImporter:
       name: hud sin ciculo_4
       rect:
         serializedVersion: 2
-        x: 2622
-        y: 3669
-        width: 604
-        height: 477
+        x: 4904
+        y: 1923
+        width: 1409
+        height: 1154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54aad98e9e1ac194c8e5fa79f21aed5e
+      spriteID: 48b1d108927cd864b9c16eca85f13387
       internalID: -5196641313835725356
       vertices: []
       indices: 
@@ -257,18 +257,18 @@ TextureImporter:
       name: hud sin ciculo_5
       rect:
         serializedVersion: 2
-        x: 1805
-        y: 3728
-        width: 584
-        height: 418
+        x: 3331
+        y: 1923
+        width: 1318
+        height: 1172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a952aae75ab6f4fb67f5cab393cdec
+      spriteID: 776c0906e49c0904d842211b4708c00c
       internalID: -1973561636935252534
       vertices: []
       indices: 
@@ -278,18 +278,18 @@ TextureImporter:
       name: hud sin ciculo_6
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 3708
-        width: 554
-        height: 458
+        x: 1667
+        y: 1923
+        width: 1437
+        height: 1118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dbead254acb55a4eb9cd36b706a940e
+      spriteID: df012f6668245054eb4646f7db03c615
       internalID: 3336197520105317157
       vertices: []
       indices: 
@@ -299,18 +299,18 @@ TextureImporter:
       name: hud sin ciculo_7
       rect:
         serializedVersion: 2
-        x: 248
-        y: 3718
-        width: 525
-        height: 418
+        x: 221
+        y: 1913
+        width: 1291
+        height: 1155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e7db60b633247a458680ed871bf9ee1
+      spriteID: fb5913a72f2ec44458e12c70aa267a56
       internalID: 7637055390361910729
       vertices: []
       indices: 
@@ -320,18 +320,18 @@ TextureImporter:
       name: hud sin ciculo_8
       rect:
         serializedVersion: 2
-        x: 297
-        y: 2910
-        width: 545
-        height: 438
+        x: 267
+        y: 431
+        width: 1309
+        height: 1019
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91f9830c95a56d247881113113c6b38b
+      spriteID: 889765f7b1894a047a2a3a2f87c83cfa
       internalID: -5197424088590357177
       vertices: []
       indices: 
@@ -340,7 +340,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d09bb0ab7a6a4d44b9ee92d66902108e
+    spriteID: 7ebb5c64c34ceac46b96425c0e55e86d
     internalID: 0
     vertices: []
     indices: 
