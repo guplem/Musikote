@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -25,22 +26,42 @@ public abstract class Interactable : Clickable
     [SerializeField] private AudioClip shakeClip;
     [SerializeField] private AudioClip useClip;
 
+    [SerializeField] protected Transform visual;
+    [SerializeField] private AnimationCurve animationCurve;
+    [SerializeField] private float scaleAnimationCurveDuration;
+    private float currentScaleAnimationCurveDuration;
+
+    private bool isInitialScale;
+    
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        isInitialScale = true;
     }
-    
+
+    protected void Update()
+    {
+        if (Vector3.Distance(Player.instance.transform.position, visual.transform.position) >= 1.5f)
+        {
+            if (!isInitialScale) return;
+            StartCoroutine(ChangeSize(visual, Vector3.zero));
+            isInitialScale = false;
+        }
+        else
+        {
+            if (isInitialScale) return;
+            StartCoroutine(ChangeSize(visual, Vector3.one));
+            isInitialScale = true;
+        }
+    }
+
     public override void IsClicked()
     {
-        Debug.Log("The current distance is: " + Vector3.Distance(Player.instance.transform.position, transform.position));
-        
         if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1.01f)
         {
-            Debug.Log("THe distance to interact is correct. ");
             UIManager.instance.ShowInteractionsFor(this);
             Player.instance.Rotate(transform.position);
         }
-            
     }
 
     public virtual bool Open()
@@ -107,5 +128,18 @@ public abstract class Interactable : Clickable
         audioSource.clip = useClip;
         audioSource.Play();
         return true;
+    }
+
+    private IEnumerator ChangeSize(Transform trans, Vector3 targetScale)
+    {
+        Vector3 originalScale = trans.localScale;
+        while (Vector3.Distance(trans.localScale, targetScale) > 0.1f)
+        {
+            yield return new WaitForEndOfFrame();
+            currentScaleAnimationCurveDuration += Time.deltaTime;
+            trans.localScale = Vector3.Lerp(originalScale, targetScale, animationCurve.Evaluate(
+                currentScaleAnimationCurveDuration / scaleAnimationCurveDuration));
+        }
+        currentScaleAnimationCurveDuration = 0f;
     }
 }
