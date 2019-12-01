@@ -151,6 +151,7 @@ public abstract class Interactable : Clickable
                 currentScaleAnimationCurveDuration / scaleAnimationCurveDuration));
         }
         currentScaleAnimationCurveDuration = 0f;
+        trans.localScale = targetScale;
     }
 
 }
