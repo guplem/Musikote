@@ -19,12 +19,15 @@ public class Player : MonoBehaviour
     private bool isMovementFinished;
     [SerializeField] public Animator animator;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         instance = this;
         lastKnownPosition = transform.position;
         isMovementFinished = true;
         items = new Interactable[2];
+        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -149,5 +152,20 @@ public class Player : MonoBehaviour
         if (item == null)
             return false;
         return items[0] == item || items[0] == item;
+    }
+
+    public void Walk()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out var hit, 200))
+        {
+            var tile = hit.transform.GetComponent<Tile>();
+            if (tile != null)
+            {
+                audioSource.clip = tile.AudioClip;
+                audioSource.Play();
+                Debug.Log("suena");
+            }
+        }
     }
 }
