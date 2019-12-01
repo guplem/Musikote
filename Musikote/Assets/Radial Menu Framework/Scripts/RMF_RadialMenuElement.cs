@@ -51,7 +51,10 @@ public class RMF_RadialMenuElement : MonoBehaviour {
     }
 
     void Start () {
-
+        if (parentRM == null)
+            Debug.LogWarning("HHH " + gameObject.name, gameObject);
+        
+        
         rt.rotation = Quaternion.Euler(0, 0, -angleOffset); //Apply rotation determined by the parent radial menu.
 
         //If we're using lazy selection, we don't want our normal mouse-over effects interfering, so we turn raycasts off.
@@ -82,11 +85,7 @@ public class RMF_RadialMenuElement : MonoBehaviour {
 
             t.triggers.Add(enter);
             t.triggers.Add(exit);
-
-
-
         }
-
     }
 	
     //Used by the parent radial menu to set up all the approprate angles. Affects master Z rotation and the active angles for lazy selection.
