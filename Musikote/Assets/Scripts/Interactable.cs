@@ -15,6 +15,7 @@ public abstract class Interactable : Clickable
     [SerializeField] public bool pull;
     [SerializeField] public bool shake;
     [SerializeField] public bool use;
+    [SerializeField] public bool canBeUsedAlone;
 
     private AudioSource audioSource;
     [SerializeField] private AudioClip openClip;
@@ -57,11 +58,18 @@ public abstract class Interactable : Clickable
 
     public override void IsClicked()
     {
-        if (Vector3.Distance(Player.instance.transform.position, transform.position) <= 1.01f)
+        if (!Player.instance.IsITemInInventory(this))
         {
-            UIManager.instance.ShowInteractionsFor(this);
+            if (Vector3.Distance(Player.instance.transform.position, transform.position) > 1.01f)
+            {
+                Debug.Log("The distance to interact is too high: " + Vector3.Distance(Player.instance.transform.position, transform.position));
+                return;
+            }
+            
             Player.instance.Rotate(transform.position);
         }
+        
+        UIManager.instance.ShowInteractionsFor(this);
     }
 
     public virtual bool Open()
@@ -125,9 +133,22 @@ public abstract class Interactable : Clickable
     public virtual bool Use()
     {
         if (!use) return false;
+
+        if (!canBeUsedAlone)
+        {
+            UIManager.instance.LookForSecondObjectToUse();
+            return true;
+        }
+
         audioSource.clip = useClip;
         audioSource.Play();
         return true;
+    }
+
+
+    public virtual bool UseWith(Interactable interactableWaiting)
+    {
+        return false;
     }
 
     private IEnumerator ChangeSize(Transform trans, Vector3 targetScale)
@@ -142,4 +163,5 @@ public abstract class Interactable : Clickable
         }
         currentScaleAnimationCurveDuration = 0f;
     }
+
 }
