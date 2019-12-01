@@ -24,22 +24,30 @@ public class UIManager : MonoBehaviour
         private set
         {
             _currentInteractable = value;
-            
-            if (!Player.instance.IsITemInInventory(currentInteractable))
-                interactions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
+            Debug.Log("Setting _currentInteractable to '" + _currentInteractable + "'");
+
+            if ( _currentInteractable == null)
+            {
+                interactions.SetActive(false); //TODO: Replace to play animation
+                invetoryInteractions.SetActive(false); //TODO: Replace to play animation
+            } 
+            else if (!Player.instance.IsITemInInventory(currentInteractable))
+                interactions.SetActive(true); //TODO: Replace to play animation
             else
-                invetoryInteractions.SetActive(_currentInteractable != null); //TODO: Replace to play animation
+                invetoryInteractions.SetActive(true); //TODO: Replace to play animation
             
-            if (currentInteractable == null) return;
-            openButton.interactable = currentInteractable.open;
-            closeButton.interactable = currentInteractable.close;
-            pickUpButton.interactable = currentInteractable.pickUpAndDrop;
-            pullButton.interactable = currentInteractable.pull;
-            pushButton.interactable = currentInteractable.push;
-            shakeButton.interactable = currentInteractable.shake;
-            useButton.interactable = currentInteractable.use;
+            Debug.Log("interactions " + interactions.activeSelf + ", invetoryInteractions " + invetoryInteractions.activeSelf);
             
-            Debug.Log("Interacting with " + currentInteractable.gameObject.name);
+            if (_currentInteractable == null) return;
+            openButton.interactable = _currentInteractable.open;
+            closeButton.interactable = _currentInteractable.close;
+            pickUpButton.interactable = _currentInteractable.pickUpAndDrop;
+            pullButton.interactable = _currentInteractable.pull;
+            pushButton.interactable = _currentInteractable.push;
+            shakeButton.interactable = _currentInteractable.shake;
+            useButton.interactable = _currentInteractable.use;
+            
+            Debug.Log("Interacting with " + _currentInteractable.gameObject.name);
         }
     }
     private Interactable _currentInteractable;
@@ -64,6 +72,7 @@ public class UIManager : MonoBehaviour
 
     public void EndInteract()
     {
+        Debug.Log("Finishing interact with " + currentInteractable);
         currentInteractable = null;
     }
     

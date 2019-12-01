@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
     public static Player instance;
@@ -90,11 +91,17 @@ public class Player : MonoBehaviour
 
     public void AddToInventory(Interactable item)
     {
-        
-        if (!DoesItemExistAt(0)) 
+
+        if (!DoesItemExistAt(0))
+        {
             items[0] = item;
-        else if (!DoesItemExistAt(1)) 
+            item.gameObject.SetActive(false);
+        }
+        else if (!DoesItemExistAt(1))
+        {
             items[1] = item;
+            item.gameObject.SetActive(false);
+        }
         else
             Debug.LogWarning("Inventory completed by " + items[0] + " and " + items[1]);
         
@@ -111,20 +118,33 @@ public class Player : MonoBehaviour
         }
         catch (NullReferenceException)
         {
-            Debug.Log("OBJ " + i + " is free");
             return false;
         }
     }
 
     public void RemoveFromInventory(Interactable interactable)
     {
-        if (items[0] == interactable) items[0] = null;
-        if (items[1] == interactable) items[1] = null;
+
+        if (items[0] == interactable) { 
+            items[0] = null; 
+            interactable.gameObject.SetActive(true);
+            interactable.transform.position = transform.position + Vector3.up * (interactable.transform.localScale.y / 2f); 
+        }
+        else if (items[1] == interactable)
+        {
+            items[1] = null; 
+            interactable.gameObject.SetActive(true);
+            interactable.transform.position = transform.position + Vector3.up * (interactable.transform.localScale.y / 2f); 
+        }
+        else Debug.LogError("Trying to remove an interactable that is not in the inventory: " + interactable.gameObject.name);
+
         UIManager.instance.inventory.UpdateVisuals();
     }
 
     public bool IsITemInInventory(Interactable item)
     {
+        if (item == null)
+            return false;
         return items[0] == item || items[0] == item;
     }
 }
