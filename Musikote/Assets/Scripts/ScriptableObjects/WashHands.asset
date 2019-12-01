@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: WashHands
   m_EditorClassIdentifier: 
   title: WashHands
-  description: Wash your hands in the bathroom
+  description: Wash your hands in the bathroom, better if u don't know what you've
+    touched tonight
   isDone: 0
