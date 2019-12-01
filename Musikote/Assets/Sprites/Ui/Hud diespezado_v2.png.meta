@@ -1,0 +1,1291 @@
+fileFormatVersion: 2
+guid: 13162efd219659c47a15847f7eb5c449
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8841420610992686383
+    second: Hud diespezado_v2_0
+  - first:
+      213: 8719196809765167227
+    second: Hud diespezado_v2_1
+  - first:
+      213: 7530014291570015782
+    second: Hud diespezado_v2_2
+  - first:
+      213: -572965904088267317
+    second: Hud diespezado_v2_3
+  - first:
+      213: -8866078330055943617
+    second: Hud diespezado_v2_4
+  - first:
+      213: 8602348637153836851
+    second: Hud diespezado_v2_5
+  - first:
+      213: -8788061938903419445
+    second: Hud diespezado_v2_6
+  - first:
+      213: -77082424273306912
+    second: Hud diespezado_v2_7
+  - first:
+      213: 7209479707523913569
+    second: Hud diespezado_v2_8
+  - first:
+      213: 949356560390899804
+    second: Hud diespezado_v2_9
+  - first:
+      213: 1703615494021685210
+    second: Hud diespezado_v2_10
+  - first:
+      213: 8470797509109935286
+    second: Hud diespezado_v2_11
+  - first:
+      213: -1246316336395486734
+    second: Hud diespezado_v2_12
+  - first:
+      213: 2069715544358272240
+    second: Hud diespezado_v2_13
+  - first:
+      213: -4807308425024449122
+    second: Hud diespezado_v2_14
+  - first:
+      213: 4371787204847647003
+    second: Hud diespezado_v2_15
+  - first:
+      213: -6501576162574539525
+    second: Hud diespezado_v2_16
+  - first:
+      213: -6079369689676321324
+    second: Hud diespezado_v2_17
+  - first:
+      213: 3160615092389355976
+    second: Hud diespezado_v2_18
+  - first:
+      213: 600568878700663792
+    second: Hud diespezado_v2_19
+  - first:
+      213: -5418241763435600254
+    second: Hud diespezado_v2_20
+  - first:
+      213: -1595559611695033655
+    second: Hud diespezado_v2_21
+  - first:
+      213: 8036814492103662510
+    second: Hud diespezado_v2_22
+  - first:
+      213: 2874945177384023055
+    second: Hud diespezado_v2_23
+  - first:
+      213: -5256539618647729687
+    second: Hud diespezado_v2_24
+  - first:
+      213: -6217077483433158505
+    second: Hud diespezado_v2_25
+  - first:
+      213: -3357735517252173897
+    second: Hud diespezado_v2_26
+  - first:
+      213: -5429994686601673924
+    second: Hud diespezado_v2_27
+  - first:
+      213: -4483984662036005880
+    second: Hud diespezado_v2_28
+  - first:
+      213: -8826297086850161783
+    second: Hud diespezado_v2_29
+  - first:
+      213: 3102544069677715389
+    second: Hud diespezado_v2_30
+  - first:
+      213: -6058263280862026463
+    second: Hud diespezado_v2_31
+  - first:
+      213: -5796242718859722164
+    second: Hud diespezado_v2_32
+  - first:
+      213: -2180454444875032425
+    second: Hud diespezado_v2_33
+  - first:
+      213: 2711532782901661953
+    second: Hud diespezado_v2_34
+  - first:
+      213: 6875362670783873294
+    second: Hud diespezado_v2_35
+  - first:
+      213: -594718276188497127
+    second: Hud diespezado_v2_36
+  - first:
+      213: 6034105809370850993
+    second: Hud diespezado_v2_37
+  - first:
+      213: -2322539463594557487
+    second: Hud diespezado_v2_38
+  - first:
+      213: -4735644842183737151
+    second: Hud diespezado_v2_39
+  - first:
+      213: -3890050560185693080
+    second: Hud diespezado_v2_40
+  - first:
+      213: 1628514771952593453
+    second: Hud diespezado_v2_41
+  - first:
+      213: -6697432606331780311
+    second: Hud diespezado_v2_42
+  - first:
+      213: 6286016827709236654
+    second: Hud diespezado_v2_43
+  - first:
+      213: 3607901374354221197
+    second: Hud diespezado_v2_44
+  - first:
+      213: 6440359884358694179
+    second: Hud diespezado_v2_45
+  - first:
+      213: 3648009880874330720
+    second: Hud diespezado_v2_46
+  - first:
+      213: -4990264600396182682
+    second: Hud diespezado_v2_47
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hud diespezado_v2_0
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 5456
+        width: 735
+        height: 714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957a2babf2735eb47837bf7f9a379cc5
+      internalID: -8841420610992686383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_1
+      rect:
+        serializedVersion: 2
+        x: 2930
+        y: 5995
+        width: 94
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee6bd94083cd594e96590bb52a92c4d
+      internalID: 8719196809765167227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_2
+      rect:
+        serializedVersion: 2
+        x: 3028
+        y: 5995
+        width: 205
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579b723c9a2ec9846ac50615aff988b1
+      internalID: 7530014291570015782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_3
+      rect:
+        serializedVersion: 2
+        x: 3242
+        y: 5995
+        width: 77
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b82b5ca1b1df984e97b29a65464f88c
+      internalID: -572965904088267317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_4
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 5995
+        width: 94
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100687454445c4542a293171684f20a4
+      internalID: -8866078330055943617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_5
+      rect:
+        serializedVersion: 2
+        x: 3733
+        y: 5995
+        width: 77
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1af47a476de24940bff8f9b2a2c8790
+      internalID: 8602348637153836851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_6
+      rect:
+        serializedVersion: 2
+        x: 3819
+        y: 5995
+        width: 115
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1a9ade2a5c46a4fb92237cb4986488
+      internalID: -8788061938903419445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_7
+      rect:
+        serializedVersion: 2
+        x: 3943
+        y: 5995
+        width: 85
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc756fb9a9fb934c9378aacfc344f67
+      internalID: -77082424273306912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_8
+      rect:
+        serializedVersion: 2
+        x: 4033
+        y: 5995
+        width: 93
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3312481e1ae4440a83f0e7a7ac4eaa
+      internalID: 7209479707523913569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_9
+      rect:
+        serializedVersion: 2
+        x: 4127
+        y: 5995
+        width: 68
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83dc4c60260a0e47b373d0cbad5dd7e
+      internalID: 949356560390899804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_10
+      rect:
+        serializedVersion: 2
+        x: 4195
+        y: 5995
+        width: 202
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143f9c2b8e4ca8148befae5c034f0d62
+      internalID: 1703615494021685210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_11
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 5743
+        width: 81
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6dc5bc4dbb36a945bd90e4922ac0f87
+      internalID: 8470797509109935286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_12
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 5743
+        width: 81
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63b8e1695c6f6f44836dd6d384bedd1
+      internalID: -1246316336395486734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_13
+      rect:
+        serializedVersion: 2
+        x: 3101
+        y: 5743
+        width: 81
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12d2d27c7f3d1542b54ba94703bdfec
+      internalID: 2069715544358272240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_14
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 5743
+        width: 34
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295aafdceb34df8499b6dc7e5cb88bfe
+      internalID: -4807308425024449122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_15
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 5743
+        width: 193
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d268593df6d72445a6963e74a93cd5c
+      internalID: 4371787204847647003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_16
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 5743
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e74f135627697349ab2edfd096d0d10
+      internalID: -6501576162574539525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_17
+      rect:
+        serializedVersion: 2
+        x: 3785
+        y: 5743
+        width: 106
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9307cb3c85476c4fa73c8109dffb757
+      internalID: -6079369689676321324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_18
+      rect:
+        serializedVersion: 2
+        x: 3892
+        y: 5743
+        width: 85
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb9002b11e9b404da07367a9d74a3a6
+      internalID: 3160615092389355976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_19
+      rect:
+        serializedVersion: 2
+        x: 3985
+        y: 5743
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb95e44f50490542aebde3d47c45153
+      internalID: 600568878700663792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_20
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 5743
+        width: 34
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ebed8448ef3d42bb87a190f48994e
+      internalID: -5418241763435600254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_21
+      rect:
+        serializedVersion: 2
+        x: 4127
+        y: 5743
+        width: 89
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75f163d867a76540bf06e2b270aeb38
+      internalID: -1595559611695033655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_22
+      rect:
+        serializedVersion: 2
+        x: 2930
+        y: 5465
+        width: 188
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a429e977a343efe47811dd0283afbbd3
+      internalID: 8036814492103662510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_23
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 5465
+        width: 94
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd934f7c499e93941b5a8b87cbff0d42
+      internalID: 2874945177384023055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_24
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 5465
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879373003455f1941a400c959745e7ad
+      internalID: -5256539618647729687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_25
+      rect:
+        serializedVersion: 2
+        x: 3315
+        y: 5465
+        width: 98
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fac2568721816e4281bcf2563f961f2
+      internalID: -6217077483433158505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_26
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 5465
+        width: 34
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325433e706e23a542b50a3dbafc5e46e
+      internalID: -3357735517252173897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_27
+      rect:
+        serializedVersion: 2
+        x: 3464
+        y: 5465
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f177ae2972f3646862dc5d89967b20
+      internalID: -5429994686601673924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_28
+      rect:
+        serializedVersion: 2
+        x: 3763
+        y: 5516
+        width: 94
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6aadc1e82e8ac143b74ed630d862486
+      internalID: -4483984662036005880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_29
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 5516
+        width: 81
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8695d44bc68e5194b922a1cce8887b89
+      internalID: -8826297086850161783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_30
+      rect:
+        serializedVersion: 2
+        x: 3956
+        y: 5516
+        width: 89
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f810ac316c9de4d874b8b726b1f2c0
+      internalID: 3102544069677715389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_31
+      rect:
+        serializedVersion: 2
+        x: 4050
+        y: 5516
+        width: 290
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3e3a40ce3f21347ad3276c8c22bfdb
+      internalID: -6058263280862026463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_32
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 5166
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6516615e831a24468fb04c8495da576
+      internalID: -5796242718859722164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_33
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 5166
+        width: 183
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b7cc1811c57b24bb82e5c45585f3bf
+      internalID: -2180454444875032425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_34
+      rect:
+        serializedVersion: 2
+        x: 3299
+        y: 5166
+        width: 92
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43f405be1e90124ea7aed43e04f640b
+      internalID: 2711532782901661953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_35
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 4345
+        width: 628
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bc1e629971e354881002baec9dc5f9
+      internalID: 6875362670783873294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_36
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 4358
+        width: 598
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0b13155688fc14b965e2282ee4ffa2
+      internalID: -594718276188497127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_37
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 4319
+        width: 658
+        height: 671
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f78df72903cde64ba7fc4cbc826949b
+      internalID: 6034105809370850993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_38
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 4358
+        width: 603
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed3c17ff89eaa64580317d76bd30e43
+      internalID: -2322539463594557487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_39
+      rect:
+        serializedVersion: 2
+        x: 3917
+        y: 3170
+        width: 1851
+        height: 1880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc448f2b794cad498d754f22dd1a317
+      internalID: -4735644842183737151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_40
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 3627
+        width: 607
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bad2943c6497a46b0bbbe118b778fe
+      internalID: -3890050560185693080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_41
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 3640
+        width: 603
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087504bb9c0cefd488e25e46ee03c430
+      internalID: 1628514771952593453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_42
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 3640
+        width: 603
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebe055986f86ee49b540e360e4e1146
+      internalID: -6697432606331780311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_43
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 4226
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69760a6ae55a814b82032726f7b1e97
+      internalID: 6286016827709236654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_44
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 3640
+        width: 602
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3559f9f639a9031428c2c1864b8960dd
+      internalID: 3607901374354221197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_45
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 3674
+        width: 46
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5644fe0bc011add42a723361e7efbe8f
+      internalID: 6440359884358694179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_46
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 2875
+        width: 602
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77df5d8643856f54f8ba2eb5a3d1d37c
+      internalID: 3648009880874330720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud diespezado_v2_47
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 1018
+        width: 1179
+        height: 1717
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a8453e3b17fcd429f2954ac56e8a93
+      internalID: -4990264600396182682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 09f9acb48ed4a834e90a324b7f4f135d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
