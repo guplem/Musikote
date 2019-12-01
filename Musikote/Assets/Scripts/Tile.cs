@@ -17,13 +17,25 @@ public class AllowedAccesses
 public class Tile : Clickable
 { 
     private float maxHeightDifference = 0.25f;
-    private bool isPlayerCurrentlyNextToTile;
 
-    [SerializeField] private MeshRenderer visuals;
-    
+    public bool isPlayerCurrentlyNextToTile
+    {
+        get { return _isPlayerCurrentlyNextToTile;}
+        set
+        {
+            _isPlayerCurrentlyNextToTile = value;
+            SetVisuals(_isPlayerCurrentlyNextToTile);
+        }
+    }
+
+    public AudioClip AudioClip => audioClip;
+    private bool _isPlayerCurrentlyNextToTile;
+
     [SerializeField] private AllowedAccesses acessesAllowed;
     
     [SerializeField] private GameObject avaliabilityMarker;
+
+    [SerializeField] private AudioClip audioClip;
     
     private void Awake()
     {
@@ -32,8 +44,7 @@ public class Tile : Clickable
 
     public void SetupTile()
     {
-        isPlayerCurrentlyNextToTile = IsPlayerNextToTile();
-        SetVisuals(isPlayerCurrentlyNextToTile);
+        isPlayerCurrentlyNextToTile = IsPlayerNextToTile() && UIManager.instance.interactableWaiting == null;
     }
     
     public void SetupTile(AllowedAccesses allowedAccesses)
@@ -48,6 +59,11 @@ public class Tile : Clickable
         this.acessesAllowed.right = allowedAccesses.right;
         this.acessesAllowed.back = allowedAccesses.back;
         this.acessesAllowed.left = allowedAccesses.left;
+    }
+
+    public void DeactivateTileAvaliability()
+    {
+        isPlayerCurrentlyNextToTile = false;
     }
 
     private void SetVisuals(bool isPlayerNextToTile)
@@ -118,6 +134,7 @@ public class Tile : Clickable
     public override void IsClicked()
     {
         if (!isPlayerCurrentlyNextToTile) return;
+        WorldManager.Instance.DeactivateAvaliabilityInAllTiles();
         Player.instance.RotateAndMove(transform.position);
     }
 }

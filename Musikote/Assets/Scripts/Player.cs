@@ -19,12 +19,15 @@ public class Player : MonoBehaviour
     private bool isMovementFinished;
     [SerializeField] public Animator animator;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         instance = this;
         lastKnownPosition = transform.position;
         isMovementFinished = true;
         items = new Interactable[2];
+        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator MoveTo(Vector3 target)
@@ -50,10 +53,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator RotateThenMove(Vector3 target)
+    private IEnumerator RotateThenMove(Vector3 target, bool move)
     {
-
-        
         Vector3 targetForRotation = new Vector3(target.x+Random.Range(-0.01f, 0.01f), transform.position.y, target.z+Random.Range(-0.01f, 0.01f));
         
         float angle = Vector3.Angle(transform.forward, targetForRotation - transform.position);
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
             if (angle < 1)
             {
                 currentMovementAnimationDuration = 0f;
-                StartCoroutine(MoveTo(target));
+                if (move) StartCoroutine(MoveTo(target));
                 yield break;
             }
         }
@@ -86,7 +87,12 @@ public class Player : MonoBehaviour
     {
         if (!isMovementFinished) return;
         isMovementFinished = false;
-        StartCoroutine(RotateThenMove(target));
+        StartCoroutine(RotateThenMove(target, true));
+    }
+
+    public void Rotate(Vector3 target)
+    {
+        StartCoroutine(RotateThenMove(target, false));
     }
 
     public void AddToInventory(Interactable item)
@@ -146,5 +152,20 @@ public class Player : MonoBehaviour
         if (item == null)
             return false;
         return items[0] == item || items[0] == item;
+    }
+
+    public void Walk()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out var hit, 200))
+        {
+            var tile = hit.transform.GetComponent<Tile>();
+            if (tile != null)
+            {
+                audioSource.clip = tile.AudioClip;
+                audioSource.Play();
+                Debug.Log("suena");
+            }
+        }
     }
 }

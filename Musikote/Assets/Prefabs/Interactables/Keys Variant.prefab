@@ -18,7 +18,8 @@ MonoBehaviour:
   push: 0
   pull: 0
   shake: 1
-  use: 0
+  use: 1
+  canBeUsedAlone: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 0}
   pickUpClip: {fileID: 8300000, guid: aa6c016a6a5933145a1aaa9c097e615f, type: 3}
@@ -27,6 +28,32 @@ MonoBehaviour:
   pullClip: {fileID: 0}
   shakeClip: {fileID: 8300000, guid: 04079e015dbaff64b8af29980ecfef55, type: 3}
   useClip: {fileID: 0}
+  visual: {fileID: 352504706417928057}
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleAnimationCurveDuration: 2
 --- !u!1001 &5430515969372918614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,10 +153,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5744702692362287255, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
+    - {fileID: 1609824939, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85851483d0f3cc443b83fd9fd0045f03, type: 3}
 --- !u!1 &352504707563187136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5744702692362287254, guid: 85851483d0f3cc443b83fd9fd0045f03,
+    type: 3}
+  m_PrefabInstance: {fileID: 5430515969372918614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &352504706417928057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5744702691083203631, guid: 85851483d0f3cc443b83fd9fd0045f03,
     type: 3}
   m_PrefabInstance: {fileID: 5430515969372918614}
   m_PrefabAsset: {fileID: 0}

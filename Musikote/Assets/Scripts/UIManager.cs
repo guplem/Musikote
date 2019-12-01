@@ -23,8 +23,8 @@ public class UIManager : MonoBehaviour
         get { return _currentInteractable; }
         private set
         {
+            Debug.LogWarning("SETTING TO '" + value + "'");
             _currentInteractable = value;
-            Debug.Log("Setting _currentInteractable to '" + _currentInteractable + "'");
 
             if ( _currentInteractable == null)
             {
@@ -35,9 +35,7 @@ public class UIManager : MonoBehaviour
                 interactions.SetActive(true); //TODO: Replace to play animation
             else
                 invetoryInteractions.SetActive(true); //TODO: Replace to play animation
-            
-            Debug.Log("interactions " + interactions.activeSelf + ", invetoryInteractions " + invetoryInteractions.activeSelf);
-            
+
             if (_currentInteractable == null) return;
             openButton.interactable = _currentInteractable.open;
             closeButton.interactable = _currentInteractable.close;
@@ -58,6 +56,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        interactableWaiting = null;
     }
 
     public void ShowInteractionsFor(Interactable interactable)
@@ -66,8 +65,16 @@ public class UIManager : MonoBehaviour
             Debug.LogWarning("Trying to show interactions of a 'null' interactable.");
         
         if (currentInteractable == interactable) return;
-        
-        currentInteractable = interactable;
+
+        if (interactableWaiting == null)
+            currentInteractable = interactable;
+        else
+        {
+            if (!interactable.UseWith(interactableWaiting))
+                Debug.Log("Interaction not permited between " + interactableWaiting + " and " + interactable);
+        }
+
+        interactableWaiting = null;
     }
 
     public void EndInteract()
@@ -93,6 +100,8 @@ public class UIManager : MonoBehaviour
     public void PickUpCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
+        if (currentInteractable == null)
+            Debug.LogWarning("Trying to interact with a null interactable.");
         currentInteractable.PickUp();
         UIManager.instance.EndInteract(); 
     }
@@ -132,4 +141,26 @@ public class UIManager : MonoBehaviour
         currentInteractable.Use();
         UIManager.instance.EndInteract(); 
     }
+
+
+    [SerializeField] private Texture2D mixUseCursor;
+    [SerializeField] private Texture2D standardCursor;
+    public Interactable interactableWaiting
+    {
+        get { return _interactableWaiting; }
+        set
+        {
+            _interactableWaiting = value;
+            Cursor.SetCursor(_interactableWaiting == null ? mixUseCursor : standardCursor, new Vector2(70, 70), CursorMode.Auto);
+            WorldManager.Instance.RecalculateWorldTiles();
+        }
+    }
+    private Interactable _interactableWaiting { get; set; }
+
+    public void LookForSecondObjectToUse()
+    {
+        interactableWaiting = currentInteractable;
+        Debug.LogWarning("Saved Interactable to wait for another to be used with.");
+    }
+
 }
