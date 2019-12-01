@@ -40,7 +40,7 @@ public class Tile : Clickable
 
     public void SetupTile()
     {
-        isPlayerCurrentlyNextToTile = IsPlayerNextToTile();
+        isPlayerCurrentlyNextToTile = IsPlayerNextToTile() && UIManager.instance.interactableWaiting == null;
     }
     
     public void SetupTile(AllowedAccesses allowedAccesses)

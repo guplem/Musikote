@@ -100,6 +100,8 @@ public class UIManager : MonoBehaviour
     public void PickUpCurrentInteractable()
     {
         Player.instance.animator.SetTrigger("Interact");
+        if (currentInteractable == null)
+            Debug.LogWarning("Trying to interact with a null interactable.");
         currentInteractable.PickUp();
         UIManager.instance.EndInteract(); 
     }
@@ -143,13 +145,14 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Texture2D mixUseCursor;
     [SerializeField] private Texture2D standardCursor;
-    private Interactable interactableWaiting
+    public Interactable interactableWaiting
     {
         get { return _interactableWaiting; }
         set
         {
-            _currentInteractable = value;
-            Cursor.SetCursor(_currentInteractable == null ? mixUseCursor : standardCursor, new Vector2(70, 70), CursorMode.Auto);
+            _interactableWaiting = value;
+            Cursor.SetCursor(_interactableWaiting == null ? mixUseCursor : standardCursor, new Vector2(70, 70), CursorMode.Auto);
+            WorldManager.Instance.RecalculateWorldTiles();
         }
     }
     private Interactable _interactableWaiting { get; set; }
