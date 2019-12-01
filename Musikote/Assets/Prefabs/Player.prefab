@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c245a0ae493269e4e98e8bf1f355a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
   movementAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -198,7 +199,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementAnimationDuration: 3
+  movementAnimationDuration: 1.8
   rotationAnimationDuration: 2
   animator: {fileID: 3166231813912767297}
 --- !u!1 &2432774708190322996

@@ -22,11 +22,9 @@ public class Tile : Clickable
     [SerializeField] private MeshRenderer visuals;
     
     [SerializeField] private AllowedAccesses acessesAllowed;
-
-    //TODO: remove variables after completing 'SetVisuals' method
-    [SerializeField] private Material materialPlayerNext;
-    [SerializeField] private Material defaultMaterial;
-
+    
+    [SerializeField] private GameObject avaliabilityMarker;
+    
     private void Awake()
     {
         WorldManager.Instance.RegisterTile(this);
@@ -54,12 +52,7 @@ public class Tile : Clickable
 
     private void SetVisuals(bool isPlayerNextToTile)
     {
-        if (!isPlayerNextToTile)
-            visuals.material = defaultMaterial;
-        else
-            visuals.material = materialPlayerNext;
-        
-        //TODO: Properly done
+        avaliabilityMarker.SetActive(isPlayerNextToTile);
     }
 
     private bool IsPlayerNextToTile()
