@@ -164,8 +164,7 @@ public class Player : MonoBehaviour
             var tile = hit.transform.GetComponent<Tile>();
             if (tile != null)
             {
-                audioSource.clip = tile.AudioClip;
-                audioSource.Play();
+                audioSource.PlayOneShot(tile.AudioClip);
                 Debug.Log("suena " + tile.AudioClip);
             }
             else

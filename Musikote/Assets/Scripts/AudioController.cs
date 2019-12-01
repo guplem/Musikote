@@ -17,7 +17,6 @@ public class AudioController : MonoBehaviour
     public void PlayClip(AudioClip clip, Vector3 position)
     {
         transform.position = position;
-        audioSource.clip = clip;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 }
