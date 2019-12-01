@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5744702691083203631}
   - component: {fileID: 5744702691083203630}
   - component: {fileID: 5744702691083203629}
-  - component: {fileID: 5744702691083203628}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -79,19 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5744702691083203628
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5744702691083203627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5744702692362287254
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,9 +89,9 @@ GameObject:
   - component: {fileID: 5744702692362287261}
   - component: {fileID: 5744702692362287258}
   - component: {fileID: 5744702692362287256}
-  - component: {fileID: 5744702692362287255}
+  - component: {fileID: 1609824939}
   m_Layer: 0
-  m_Name: Door
+  m_Name: _InteractableBase - Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 5744702692362287254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.39, z: 2.62}
-  m_LocalScale: {x: 1, y: 1, z: 0.22}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 5744702691083203631}
   m_Father: {fileID: 0}
@@ -235,7 +221,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5744702692362287255
+--- !u!114 &1609824939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,44 +230,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 5744702692362287254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d946d3cd09dcd4b408161c95001d858a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4904eb6e2319de746a2c8d825a166d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 1
-  close: 1
-  pickUp: 0
+  open: 0
+  close: 0
+  pickUpAndDrop: 1
   push: 0
   pull: 0
   shake: 0
-  use: 1
+  use: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 0}
   pickUpClip: {fileID: 0}
+  dropClip: {fileID: 0}
   pushClip: {fileID: 0}
   pullClip: {fileID: 0}
   shakeClip: {fileID: 0}
   useClip: {fileID: 0}
-  tilesAffectedByDoor:
-  - tile: {fileID: 0}
-    accessesWhileOpen:
-      forward: 1
-      back: 1
-      left: 1
-      right: 1
-    accessesWhileClosed:
-      forward: 1
-      back: 0
-      left: 1
-      right: 1
-  - tile: {fileID: 0}
-    accessesWhileOpen:
-      forward: 1
-      back: 1
-      left: 1
-      right: 1
-    accessesWhileClosed:
-      forward: 0
-      back: 1
-      left: 1
-      right: 1
-  visuals: {fileID: 5744702691083203627}
+  visual: {fileID: 5744702691083203631}
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleAnimationCurveDuration: 3
