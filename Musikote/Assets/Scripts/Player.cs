@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
             interactable.gameObject.SetActive(true);
             interactable.transform.position = transform.position + Vector3.up * (interactable.transform.localScale.y / 2f); 
         }
-        else Debug.LogError("Trying to remove an interactable that is not in the inventory: " + interactable.gameObject.name);
+        else Debug.LogWarning("Trying to remove an interactable that is not in the inventory: " + interactable.gameObject.name);
 
         UIManager.instance.inventory.UpdateVisuals();
     }

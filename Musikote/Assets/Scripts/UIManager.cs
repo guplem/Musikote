@@ -171,7 +171,7 @@ public class UIManager : MonoBehaviour
         set
         {
             _interactableWaiting = value;
-            Cursor.SetCursor(_interactableWaiting == null ? mixUseCursor : standardCursor, new Vector2(70, 70), CursorMode.Auto);
+            Cursor.SetCursor(_interactableWaiting == null ? mixUseCursor : standardCursor, new Vector2(66, 66), CursorMode.Auto);
             WorldManager.Instance.RecalculateWorldTiles();
         }
     }

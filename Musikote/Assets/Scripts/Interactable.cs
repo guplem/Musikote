@@ -58,7 +58,7 @@ public abstract class Interactable : Clickable
     {
         if (!Player.instance.IsITemInInventory(this))
         {
-            if (Vector3.Distance(Player.instance.transform.position, transform.position) > 1.01f)
+            if (Vector3.Distance(Player.instance.transform.position, transform.position) >= 1.5f)
             {
                 Debug.Log("The distance to interact is too high: " + Vector3.Distance(Player.instance.transform.position, transform.position));
                 return;
