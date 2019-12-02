@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: FeddHedgehog
   m_EditorClassIdentifier: 
   title: Feed your hedgehog
-  description: hedgehog has not eaten for days idiot. Feed him!!
-  isDone: 0
+  description: Your hedgehog has not eaten for days idiot. Feed him!!

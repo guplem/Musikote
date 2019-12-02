@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Eat
   m_EditorClassIdentifier: 
   title: Eat
-  description: Eat the half left sandwich form 3 days ago
-  isDone: 0
+  description: Eat the remaining chips in the bag that you have in the kitchen.

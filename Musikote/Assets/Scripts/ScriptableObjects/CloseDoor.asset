@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: CloseDoor
   m_EditorClassIdentifier: 
   title: Close door
-  description: Come on don't get your home open to thieves
-  isDone: 0
+  description: Come on don't get your home open to thieves.
