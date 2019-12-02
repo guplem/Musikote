@@ -21,6 +21,7 @@ public class WorldManager : MonoBehaviour
 
     public void RecalculateWorldTiles()
     {
+        Debug.Log("Recalculating tiles");
         foreach (Tile tile in tilesInMap)
             tile.SetupTile();
     }

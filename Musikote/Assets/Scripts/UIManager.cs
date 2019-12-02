@@ -49,20 +49,34 @@ public class UIManager : MonoBehaviour
             if (!Player.instance.IsITemInInventory(currentInteractable))
             {
                 openButton.interactable = _currentInteractable.open;
+                openButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 closeButton.interactable = _currentInteractable.close;
+                closeButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 pickUpButton.interactable = _currentInteractable.pickUpAndDrop;
+                pickUpButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 pullButton.interactable = _currentInteractable.pull;
+                pullButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 pushButton.interactable = _currentInteractable.push;
+                pushButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 shakeButton.interactable = _currentInteractable.shake;
+                shakeButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 useButton.interactable = _currentInteractable.use;
+                useButton.transform.GetChild(0).GetComponent<iconButton>().Setup();
             } else {
                 openButtonInventory.interactable = _currentInteractable.open;
+                openButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 closeButtonInventory.interactable = _currentInteractable.close;
+                closeButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 dropButtonInventory.interactable = _currentInteractable.pickUpAndDrop;
+                dropButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 pullButtonInventory.interactable = _currentInteractable.pull;
+                pullButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 pushButtonInventory.interactable = _currentInteractable.push;
+                pushButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 shakeButtonInventory.interactable = _currentInteractable.shake;
+                shakeButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
                 useButtonInventory.interactable = _currentInteractable.use;
+                useButtonInventory.transform.GetChild(0).GetComponent<iconButton>().Setup();
             }
 
             Debug.Log("Interacting with " + _currentInteractable.gameObject.name);
@@ -87,7 +101,10 @@ public class UIManager : MonoBehaviour
         if (currentInteractable == interactable) return;
 
         if (interactableWaiting == null)
-            currentInteractable = interactable;
+        {
+            if (interactable.close || interactable.open || interactable.pull || interactable.push || interactable.shake || interactable.use || interactable.pickUpAndDrop)
+                currentInteractable = interactable;
+        }
         else
         {
             if (!interactable.UseWith(interactableWaiting))

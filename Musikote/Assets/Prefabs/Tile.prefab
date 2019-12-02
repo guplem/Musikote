@@ -204,13 +204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849694722acbf0c46a882d252435ae2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visuals: {fileID: 3267889119716543442}
   acessesAllowed:
     forward: 1
     back: 1
     left: 1
     right: 1
   avaliabilityMarker: {fileID: 1800215018125416276}
+  audioClip: {fileID: 0}
 --- !u!65 &5463662292017628974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -289,17 +289,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9f824c72cb4eb7849b2bd3a8b927ba45,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9f824c72cb4eb7849b2bd3a8b927ba45,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 40.000015
+      value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9f824c72cb4eb7849b2bd3a8b927ba45,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 400.00018
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 9f824c72cb4eb7849b2bd3a8b927ba45,
         type: 3}

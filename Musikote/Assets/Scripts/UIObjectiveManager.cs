@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,12 +17,19 @@ public class UIObjectiveManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (Objetive objective in GameManager.instance.objectives)
+        try
         {
-            GameObject go = Instantiate(objectivePrefab, transform);
-            go.transform.GetChild(0).GetComponent<TMP_Text>().text = objective.title;
-            go.transform.GetChild(1).GetComponent<TMP_Text>().text = objective.description;
-        }
+            Objetive firstObj = GameManager.instance.objectives[0];
+            if (firstObj != null)
+            {
+                GameObject go = Instantiate(objectivePrefab, transform);
+                go.transform.GetChild(0).GetComponent<TMP_Text>().text = firstObj.title;
+                go.transform.GetChild(1).GetComponent<TMP_Text>().text = firstObj.description;
+            }
+                
+                
+        } catch (ArgumentException) {   }
+        
     }
     
     
