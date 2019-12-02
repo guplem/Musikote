@@ -60,10 +60,11 @@ public class GameManager : MonoBehaviour
          
     }
 
-    public void CompleteObjective(Objetive currentObjective)
+    public void CompleteObjective(Objetive objToDelete)
     {
-        AudioController.Instance.PlayClip(objectiveCompletedClip, Player.instance.transform.position);
-        objectives.Remove(currentObjective);
+        if (objectives.Contains(objToDelete))
+            AudioController.Instance.PlayClip(objectiveCompletedClip, Player.instance.transform.position);
+        objectives.Remove(objToDelete);
         UIManager.instance.objectivesManager.Setup();
         
         //TODO complete game
