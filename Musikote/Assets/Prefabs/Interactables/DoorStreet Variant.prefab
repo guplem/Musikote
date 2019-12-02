@@ -20,13 +20,13 @@ MonoBehaviour:
   shake: 1
   use: 0
   canBeUsedAlone: 0
-  openClip: {fileID: 0}
+  openClip: {fileID: 8300000, guid: fc43b2571350c7c4d9d31b539048abb9, type: 3}
   closeClip: {fileID: 0}
   pickUpClip: {fileID: 0}
   dropClip: {fileID: 0}
   pushClip: {fileID: 0}
   pullClip: {fileID: 0}
-  shakeClip: {fileID: 0}
+  shakeClip: {fileID: 8300000, guid: fc43b2571350c7c4d9d31b539048abb9, type: 3}
   useClip: {fileID: 0}
   visual: {fileID: 434585747475683012}
   animationCurve:

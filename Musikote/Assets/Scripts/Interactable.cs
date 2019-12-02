@@ -23,7 +23,7 @@ public abstract class Interactable : Clickable
     [SerializeField] private AudioClip pushClip;
     [SerializeField] private AudioClip pullClip;
     [SerializeField] private AudioClip shakeClip;
-    [SerializeField] private AudioClip useClip;
+    [SerializeField] public AudioClip useClip;
 
     [SerializeField] protected Transform visual;
     [SerializeField] private AnimationCurve animationCurve;

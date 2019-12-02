@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6877630557303170578}
   - component: {fileID: 8628132414222111296}
   - component: {fileID: 305722485115421748}
-  - component: {fileID: 364369851}
   - component: {fileID: 364369850}
+  - component: {fileID: 1575142623}
+  - component: {fileID: 1575142622}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -55,6 +56,8 @@ MonoBehaviour:
   clickHit:
     serializedVersion: 2
     m_Bits: 19
+  objectiveCompletedClip: {fileID: 8300000, guid: 156a243cb3080db46ba931b686351698,
+    type: 3}
 --- !u!114 &305722485115421748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +70,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcf3162b8ab9d041aec0469f8f68445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &364369851
+--- !u!114 &364369850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951531059933634998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf18e0e08bf93044ab0014c0b0869bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1575142623
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +178,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &364369850
+--- !u!114 &1575142622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

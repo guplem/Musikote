@@ -27,7 +27,7 @@ MonoBehaviour:
   pushClip: {fileID: 0}
   pullClip: {fileID: 0}
   shakeClip: {fileID: 0}
-  useClip: {fileID: 0}
+  useClip: {fileID: 8300000, guid: 1582e6ba4fb5b1c4d82958d2284b164e, type: 3}
   visual: {fileID: 5131557994887900773}
   animationCurve:
     serializedVersion: 2

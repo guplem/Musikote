@@ -22,12 +22,12 @@ MonoBehaviour:
   canBeUsedAlone: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 0}
-  pickUpClip: {fileID: 0}
+  pickUpClip: {fileID: 8300000, guid: dd8a3c5cc337f014dbe1633fab6e18a7, type: 3}
   dropClip: {fileID: 0}
   pushClip: {fileID: 0}
   pullClip: {fileID: 0}
-  shakeClip: {fileID: 0}
-  useClip: {fileID: 0}
+  shakeClip: {fileID: 8300000, guid: ec2e7165da1ca9140b4bedcdf2407116, type: 3}
+  useClip: {fileID: 8300000, guid: 959162881afc1dd4fa8c75de21203256, type: 3}
   visual: {fileID: 2093800755421041984}
   animationCurve:
     serializedVersion: 2

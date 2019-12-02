@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [FormerlySerializedAs("_objectives")] [SerializeField] public List<Objetive> objectives;
     [SerializeField] public LayerMask clickHit;
+    [SerializeField] private AudioClip objectiveCompletedClip;
 
     private void Awake()
     {
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void CompleteObjective(Objetive currentObjective)
     {
+        AudioController.Instance.PlayClip(objectiveCompletedClip, Player.instance.transform.position);
         objectives.Remove(currentObjective);
         UIManager.instance.objectivesManager.Setup();
         

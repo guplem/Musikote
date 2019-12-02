@@ -12,6 +12,7 @@ public class Hedgehog : Interactable
         {
             GameManager.instance.RemoveInteractableFromGame(interactableWaiting);
             GameManager.instance.CompleteObjective(ObjectiveToComplete);
+            AudioController.Instance.PlayClip(interactableWaiting.useClip, transform.position);
         }
         else
         {
