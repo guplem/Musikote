@@ -151,7 +151,23 @@ public class Player : MonoBehaviour
     {
         if (item == null)
             return false;
-        return items[0] == item || items[0] == item;
+        
+        GameObject go0;
+        GameObject go1;
+
+        try {
+            go0 = items[0].gameObject;
+        } catch (NullReferenceException) {
+            go0 = null;
+        }
+        
+        try {
+            go1 = items[1].gameObject;
+        } catch (NullReferenceException) {
+            go1 = null;
+        }
+        
+        return go0 == item.gameObject || go1 == item.gameObject;
     }
 
     public void Walk()

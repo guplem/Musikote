@@ -10,6 +10,7 @@ public class Food : Interactable
     {
         if (!base.Use()) return false;
         GameManager.instance.CompleteObjective(ObjectiveToComplete);
+        GameManager.instance.RemoveInteractableFromGame(this);
         return true;
     }
 }
